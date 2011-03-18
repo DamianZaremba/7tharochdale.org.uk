@@ -1,0 +1,38 @@
+a.videoPlayer {
+	text-align: center;
+	display: block;
+	width: 520px;
+	height: 330px;
+	border: 1px solid #999;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+div.gallery_video a.videoPlayer {
+	text-align: center;
+	display: block;
+	height: 370px;
+	width: 598px;
+	border: 1px solid #999;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+a.videoPlayer img {
+	margin-top: 120px;
+	border: 0px;
+	width: 83px;
+	height: 83px;
+}
+
+a.videoPlayer:hover {
+	border: 1px solid #000;
+}
+
+div.gallery_video a.videoPlayer img {
+	margin-top: 150px;
+	border: 0px;
+	width: 83px;
+	height: 83px;
+}

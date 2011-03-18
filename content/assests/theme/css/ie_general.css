@@ -1,0 +1,4 @@
+/* Fix those stupid hover issues */
+body {
+	behavior: url("../other/hover.htc");
+}

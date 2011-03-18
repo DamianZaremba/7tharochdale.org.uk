@@ -1,0 +1,9 @@
+permalink: /news/:year/:month/:title
+markdown: rdiscount
+pygments: true
+lsi: true
+exclude: Capfile, Rakefile, scripts, README
+destination: ../7tharochdale.org.uk-live
+source: content
+#basedomain: http://localhost:4000
+basedomain: http://7tharochdale.org.uk.dev.nodehost.co.uk/

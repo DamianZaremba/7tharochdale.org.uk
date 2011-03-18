@@ -1,0 +1,20 @@
+---
+layout: post
+title: Test post!
+author: Damian Zaremba
+excerpt: Some test post
+categories:
+- TAG1
+- TAG1
+- TAG3
+- TAG5
+- TAG6
+- TAG7
+- TAG8
+- TAG9
+- TAG03
+- TAG5
+
+---
+
+Test post!
