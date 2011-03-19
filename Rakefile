@@ -49,11 +49,11 @@ task :minify_assests do
 	end
 
 	Dir['../7tharochdale.org.uk-live/assests/**/*.png'].each do |img|
-		sh "convert -quality 0 +dither -colors 256 #{img} #{img}"
+		sh "convert -quality 0 #{img} #{img}"
 	end
 
 	Dir['../7tharochdale.org.uk-live/assests/**/*.jp*g'].each do |img|
-		sh "convert -quality 0 +dither -colors 256 #{img} #{img}"
+		sh "convert -quality 0 #{img} #{img}"
 	end
 end
 
