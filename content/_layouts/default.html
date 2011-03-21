@@ -7,9 +7,13 @@
 
 	<!-- Meta Data -->
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<meta name="description" content="7th A Rochdale Scout Group are a small, friendly, family orientated scout group located in Spotland bridge, Rochdale" />
-	<meta name="keywords" content="Scout, Explorer, Cub, Beaver, Explorer Scout, Cub Scout, Beaver Scout, patrol leader, assistant patrol leader, senior patrol leader, young leader, adult leader, fun, learning, activities, climbing, abseiling, kayaking, camping, Manchester, Greater Manchester, Greater Manchester North, North Manchester, Spotland Bridge, Rochdale" />
-	<meta name="copyright" content=">Copyright &copy; 2010 7th A Rochdale Scout Group" />
+	<meta name="description" content="7th A Rochdale Scout Group are a small, friendly, family orientated
+	scout group located in Spotland bridge, Rochdale" />
+	<meta name="keywords" content="Scout, Explorer, Cub, Beaver, Explorer Scout, Cub Scout, Beaver Scout,
+	patrol leader, assistant patrol leader, senior patrol leader, young leader, adult leader, fun, learning,
+	activities, climbing, abseiling, kayaking, camping, Manchester, Greater Manchester, Greater Manchester North,
+	North Manchester, Spotland Bridge, Rochdale" />
+	<meta name="copyright" content=">Copyright 2011 7th A Rochdale Scout Group" />
 	<meta name="author" content="Damian Zaremba" />
 
 	<meta name="robots" content="INDEX" />
@@ -19,23 +23,19 @@
 
 	<meta name="classification" content="GENERAL" />
 	<meta name="distribution" content="GLOBAL" />
-
 	<meta name="audience" content="all" />
 	<meta name="MSSmartTagsPreventParsing" content="TRUE" />
 
 	<!-- CSS files -->
 	<link href="{{ site.basedomain }}/assests/theme/css/reset.css" rel="stylesheet" type="text/css" />
 	<link href="{{ site.basedomain }}/assests/theme/css/layout.css" rel="stylesheet" type="text/css" />
-	<link href="{{ site.basedomain }}/assests/theme/css/main.css" rel="stylesheet" type="text/css" />
-	<link href="{{ site.basedomain }}/assests/theme/css/news_feeds.css" rel="stylesheet" type="text/css" />
-	<link href="{{ site.basedomain }}/assests/theme/css/gallery.css" rel="stylesheet" type="text/css" />
+	<link href="{{ site.basedomain }}/assests/theme/css/core.css" rel="stylesheet" type="text/css" />
 	<link href="{{ site.basedomain }}/assests/theme/css/video_player.css" rel="stylesheet" type="text/css" />
 
 	<!-- JS files -->
 	<script type="text/javascript" src="{{ site.basedomain }}/assests/theme/javascript/jquery.js"></script>
-	<script type="text/javascript" src="{{ site.basedomain }}/assests/theme/javascript/main.js"></script>
-	<script type="text/javascript" src="{{ site.basedomain }}/assests/theme/javascript/page.js"></script>
 	<script type="text/javascript" src="{{ site.basedomain }}/assests/theme/javascript/video_player.js"></script>
+	<script type="text/javascript" src="{{ site.basedomain }}/assests/theme/javascript/main.js"></script>
 
 	<!-- IE fix files -->
 	<!--[if IE]>
@@ -55,28 +55,27 @@
 	<![endif]-->
 
 	<script type="text/javascript">
-		/* Cache the images we display on hover, this saves a 3second wait for it to load */
 		preLoadImages([
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_about.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_contact.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_faq.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_home.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_leaders.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_media.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_news.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_sections.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_gallery.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_section_scouts.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_section_cubs.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_section_beavers.gif",
-		"{{ site.basedomain }}/assests/theme/images/menu/depressed_section_explorers.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_about.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_contact.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_faq.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_home.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_leaders.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_media.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_news.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_sections.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_menu_gallery.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_section_scouts.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_section_cubs.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_section_beavers.gif",
+			"{{ site.basedomain }}/assests/theme/images/menu/depressed_section_explorers.gif",
 		]);
 	</script>
 	
 	<!--
 	Thanks goes to scoutbase.org.uk for some of the content
 	
-	{% render_time Page rendered at: %}
+	{% render_time Site rendered at: %} via Jekyll.
 	-->
 
 	<!-- RIPA NOTICE: No consent is given for the interception of this page transmission -->
@@ -89,28 +88,95 @@
 	</div>
 	<div id="menu">
 	<ul>
-		<li><a href="{{ site.basedomain }}/" title="Home"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/menu_home.gif" alt="Home" /></a></li>
-		<li><img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" /></li>
-		<li><a href="{{ site.basedomain }}/about.html" title="About"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/menu_about.gif" alt="About" /></a></li>
-		<li><img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" /></li>
-		<li><a href="{{ site.basedomain }}/news/" title="News"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/menu_news.gif" alt="News" /></a></li>
-		<li><img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" /></li>
-		<li><a href="{{ site.basedomain }}/faq.html" title="FAQ"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/menu_faq.gif" alt="FAQ" /></a></li>
-		<li><img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" /></li>
-		<li><a href="{{ site.basedomain }}/leaders.html" title="Leaders"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/menu_leaders.gif" alt="Leaders" /></a></li>
-		<li><img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" /></li>
-		<li><img src="{{ site.basedomain }}/assests/theme/images/menu/menu_sections.gif" alt="Sections" />
-		<ul>
-			<li><a href="{{ site.basedomain }}/scouts.html" title="Scouts"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/section_scouts.gif" alt="Scouts" /></a></li>
-			<li><a href="{{ site.basedomain }}/cubs.html" title="Cub Scouts"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/section_cubs.gif" alt="Cubs" /></a></li>
-			<li><a href="{{ site.basedomain }}/beavers.html" title="Beaver Scouts"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/section_beavers.gif" alt="Beavers" /></a></li>
-			<li><a href="{{ site.basedomain }}/explorers.html" title="Explorer Scouts"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/section_explorers.gif" alt="Explorers" /></a></li>
-		</ul>
+		<li><a href="{{ site.basedomain }}/" title="Home">
+			<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+			src="{{ site.basedomain }}/assests/theme/images/menu/menu_home.gif" alt="Home" />
+		</a></li>
+		<li>
+			<img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" /></li>
+		<li>
+			<a href="{{ site.basedomain }}/about" title="About">
+				<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+				src="{{ site.basedomain }}/assests/theme/images/menu/menu_about.gif" alt="About" />
+			</a>
 		</li>
-		<li><img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" /></li>
-		<li><a href="{{ site.basedomain }}/gallery.html" title="Gallery"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/menu_gallery.gif" alt="Gallery" /></a></li>
-		<li><img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" /></li>
-		<li><a href="{{ site.basedomain }}/contact.html" title="Contact Us"><img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);" src="{{ site.basedomain }}/assests/theme/images/menu/menu_contact.gif" alt="Contact Us" /></a></li>
+		<li>
+			<img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" />
+		</li>
+		<li>
+			<a href="{{ site.basedomain }}/news/" title="News">
+				<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+				src="{{ site.basedomain }}/assests/theme/images/menu/menu_news.gif" alt="News" />
+			</a>
+		</li>
+		<li>
+			<img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" />
+		</li>
+		<li>
+			<a href="{{ site.basedomain }}/faq" title="FAQ">
+				<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+				src="{{ site.basedomain }}/assests/theme/images/menu/menu_faq.gif" alt="FAQ" />
+			</a>
+		</li>
+		<li>
+			<img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" />
+		</li>
+		<li>
+			<a href="{{ site.basedomain }}/leaders" title="Leaders">
+				<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+				src="{{ site.basedomain }}/assests/theme/images/menu/menu_leaders.gif" alt="Leaders" />
+			</a>
+		</li>
+		<li>
+			<img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" />
+		</li>
+		<li>
+			<img src="{{ site.basedomain }}/assests/theme/images/menu/menu_sections.gif" alt="Sections" />
+			<ul>
+				<li>
+					<a href="{{ site.basedomain }}/scouts" title="Scouts">
+						<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+						src="{{ site.basedomain }}/assests/theme/images/menu/section_scouts.gif" alt="Scouts" />
+					</a>
+				</li>
+				<li>
+					<a href="{{ site.basedomain }}/cubs" title="Cub Scouts">
+						<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+						src="{{ site.basedomain }}/assests/theme/images/menu/section_cubs.gif" alt="Cubs" />
+					</a>
+				</li>
+				<li>
+					<a href="{{ site.basedomain }}/beavers" title="Beaver Scouts">
+						<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+						src="{{ site.basedomain }}/assests/theme/images/menu/section_beavers.gif" alt="Beavers" />
+					</a>
+				</li>
+				<li>
+					<a href="{{ site.basedomain }}/explorers" title="Explorer Scouts">
+						<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+						src="{{ site.basedomain }}/assests/theme/images/menu/section_explorers.gif" alt="Explorers" />
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" />
+		</li>
+		<li>
+			<a href="{{ site.basedomain }}/gallery" title="Gallery">
+				<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+				src="{{ site.basedomain }}/assests/theme/images/menu/menu_gallery.gif" alt="Gallery" />
+			</a>
+		</li>
+		<li>
+			<img src="{{ site.basedomain }}/assests/theme/images/menu/menu_seperator.gif" width="2px" alt="|" />
+		</li>
+		<li>
+			<a href="{{ site.basedomain }}/contact" title="Contact Us">
+				<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
+				src="{{ site.basedomain }}/assests/theme/images/menu/menu_contact.gif" alt="Contact Us" />
+			</a>
+		</li>
 	</ul>
 	</div>
 	<div id="content_holder">
@@ -132,24 +198,27 @@ The </font><font color="#FF8000" size="4" face="Arial">Scouting</font>
 <font color="#FF0000" size="4" face="Arial"> Webring</font><br>
 <a href="http://worldscouts.net/scoutingwebring/"> <IMG SRC="sring4.jpg" border="0" width="430" height="88"> </a><br>
 <a href="http://worldscouts.net/cgi-bin/ringlink/prev.pl?ringid=scouting;siteid=mikephillips114"><font size="2" face="Arial">Previous Site</font>
-</a><font size="2" face="Arial"> | </font><a href="http://worldscouts.net/scoutingwebring/add.html"><font size="2" face="Arial">Join Webring</font>
+</a><font size="2" face="Arial"> | </font><a href="http://worldscouts.net/scoutingwebring/add"><font size="2" face="Arial">Join Webring</font>
 </a><font size="2" face="Arial"> | </font><a href="http://worldscouts.net/cgi-bin/ringlink/rand.pl?ringid=scouting;siteid=mikephillips114"><font size="2" face="Arial">Random Site</font>
 </a><font size="2" face="Arial"> | </font><a href="http://worldscouts.net/cgi-bin/ringlink/next5.pl?ringid=scouting;siteid=mikephillips114"><font size="2" face="Arial">Next 5</font>
 </a><font size="2" face="Arial"> | </font><a href="http://worldscouts.net/cgi-bin/ringlink/next.pl?ringid=scouting;siteid=mikephillips114"><font size="2" face="Arial">Next Site</font></a></p>
 
-			Nice neat code that follows validation and provices the same output as above:
+			Nice neat code that follows validation and provides the same output as above:
 			-->
 
 			<!-- Header -->
 			<span class="wring_header">The <span>Scouting <span>Webring</span></span></span><br />
 
 			<!-- Actul image -->
-			<a href="http://worldscouts.net/scoutingwebring/" title="The Scouting Webring Home Page"><img src="{{ site.basedomain }}/assests/theme/images/web_ring.png" alt="Click HERE and go to The Scouting Webring Home Page, Click below to continue on the ring." height="60" /><br /></a>
+			<a href="http://worldscouts.net/scoutingwebring/" title="The Scouting Webring Home Page">
+				<img src="{{ site.basedomain }}/assests/theme/images/web_ring.png"
+				alt="Click HERE and go to The Scouting Webring Home Page, Click below to continue on the ring." height="60" />
+			<br /></a>
 
 			<!-- Footer links -->
 			<p class="wring_flinks">
 				<a href="http://worldscouts.net/cgi-bin/ringlink/prev.pl?ringid=scouting;siteid=mikephillips114">Previous Site</a> |
-				<a href="http://worldscouts.net/scoutingwebring/add.html">Join Webring</a> |
+				<a href="http://worldscouts.net/scoutingwebring/add">Join Webring</a> |
 				<a href="http://worldscouts.net/cgi-bin/ringlink/rand.pl?ringid=scouting;siteid=mikephillips114">Random Site</a> |
 				<a href="http://worldscouts.net/cgi-bin/ringlink/next5.pl?ringid=scouting;siteid=mikephillips114">Next 5</a> |
 				<a href="http://worldscouts.net/cgi-bin/ringlink/next.pl?ringid=scouting;siteid=mikephillips114">Next Site</a>

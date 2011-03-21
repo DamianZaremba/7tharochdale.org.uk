@@ -57,26 +57,6 @@ h3 {
 	background-color: #522e91;
 }
 
-#news_twitter_feeds {
-	height: 500px;
-}
-
-#twitter_7tha {
-	float: left;
-	width: 250px;
-}
-
-#twitter_ukscouts {
-	float: left;
-	width: 250px;
-	margin-left: 100px;
-	clear: right;
-}
-
-#news_articles {
-
-}
-
 #faq_list p {
 	margin-top: 2px;
 	padding: 5px;

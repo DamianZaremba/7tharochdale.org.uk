@@ -18,7 +18,7 @@ function switch_menu_image(item) {
 
 	if(image_name.split('depressed_').length == 2){ // We are the depressed image
 		replace_image = image_path+'/'+image_name.split('depressed_')[1];
-	}else{ // We are the happy image
+	}else{ // We are the happy image (ha!)
 		replace_image = image_path+'/depressed_'+image_name;
 	}
 	item.src = replace_image;
@@ -36,7 +36,7 @@ function switcher(show_id) {
 			return true;
 		}
 	} else {
-		alert("Sorry we could not find that information");
+		alert("Sorry we could not find that information!");
 		return false;
 	}
 }

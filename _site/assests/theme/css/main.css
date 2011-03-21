@@ -1,0 +1,126 @@
+#menu ul {
+	list-style-type: none;
+	z-index: 3;
+}
+
+#menu ul li {
+	display: inline;
+	float: left;
+}
+
+#menu ul li img {
+	border: 0px;
+}
+
+#menu li ul li {
+	position: relative;
+	clear: left;
+	z-index: 3;
+}
+
+#menu li ul {
+	position: absolute;
+	display: none;
+}
+
+#menu li:hover ul {
+	display: block;
+}
+
+#menu li:hover ul li {
+	margin-top: -3px;
+	border-style: solid;
+	border-color: #000000;
+	border-width: 1px;
+	height: 35px;
+	width: 130px;
+}
+
+#footer_left {
+	float: left;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+#footer_left p {
+	text-align: center;
+	margin-top: 5px;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#footer_webring {
+	float: right;
+	margin-top: 6px;
+	margin-right: 12px;
+	text-align: center;
+}
+
+#footer_webring .wring_header {
+	margin: 0 auto;
+	text-align: center;
+	color: #FF0000;
+	font-size: 16px;
+}
+
+#footer_webring .wring_header span {
+	color: #FF8000;
+	font-size: 16px;
+}
+
+#footer_webring .wring_header span span {
+	color: #FF0000;
+	font-size: 16px;
+}
+
+#footer_webring .wring_flinks {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 10px;
+}
+
+#footer_webring .wring_flinks a:link {
+	color: #FFFFFF;
+}
+
+#footer_webring .wring_flinks a:visited {
+	color: #FFFFFF;
+}
+
+#footer_webring .wring_flinks a:hover {
+	color: #cc9900;
+}
+
+#footer_webring .wring_flinks a:active {
+	color: #FFFFFF;
+}
+
+#footer_webring img {
+	border: 0;
+	padding-top: 5px;
+	padding-bottom: 2px;
+}
+
+#main_content h2 {
+	padding-top: 10px;
+	margin-bottom: 5px;
+	border-bottom-color: grey;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	width: 850px;
+	font-size: 18px;
+}
+
+#main_content p {
+	padding: 3px;
+	font-size: 14px;
+}
+
+.hidden {
+	display: none;
+}
+
+.blocker {
+	clear: both;
+}

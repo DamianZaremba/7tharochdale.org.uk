@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title></title>
+	<link href="http://10.44.200.5:4000/atom.xml" rel="self" />
+	<link href="http://10.44.200.5:4000/" />
+	<updated>2011-03-19T09:16:31+00:00</updated>
+	<id>http://10.44.200.5:4000</id>
+	<author>
+		<name>7th A Leadership team</name>
+		<email>gsl@7tharochdale.org.uk</email>
+	</author>
+	
+	<entry>
+		<title>Test post!</title>
+		<link href="http://10.44.200.5:4000/TAG1/TAG1/TAG3/TAG5/TAG6/TAG7/TAG8/TAG9/TAG03/TAG5/2011/03/17/testpost/" />
+		<updated>2011-03-17T00:00:00+00:00</updated>
+		<id>http://10.44.200.5:4000/TAG1/TAG1/TAG3/TAG5/TAG6/TAG7/TAG8/TAG9/TAG03/TAG5/2011/03/17/testpost</id>
+		<content type="html">
+			&lt;p&gt;Test post!&lt;/p&gt;
+
+		</content>
+	</entry>
+	
+</feed>
