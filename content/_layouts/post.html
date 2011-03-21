@@ -20,23 +20,25 @@ layout: default
 </div>
 -->
 <div id="comments">
-	<h2>Comments</h2>
+	<!-- <h2>Comments</h2> -->
 	<iframe src="http://www.facebook.com/plugins/like.php?href={{ site.basedomain }}/{{ page.url }}&amp;
-	layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;
-	height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;"
+	layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;"
+	height=25" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;"
 	allowTransparency="true"></iframe>
 	<div id="disqus_thread"></div>
-	<script type="text/javascript">
-		var disqus_shortname = '7tharochdale';
-		var disqus_identifier = '{{ page.url }}';
-		var disqus_url = '{{ site.basedomain }}/{{ page.url }}';
-		(function() {
-			var dsq = document.createElement('script');
-			dsq.type = 'text/javascript';
-			dsq.async = true;
-			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-			
-			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		})();
-	</script>
 </div>
+
+<script type="text/javascript">
+    /* Load up disqus */
+    var disqus_shortname = '7tharochdale';
+    var disqus_identifier = '{{ page.url }}';
+    var disqus_url = '{{ site.basedomain }}/{{ page.url }}';
+    (function() {
+	    var dsq = document.createElement('script');
+	    dsq.type = 'text/javascript';
+	    dsq.async = true;
+	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	    
+	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>

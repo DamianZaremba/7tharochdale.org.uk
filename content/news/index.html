@@ -2,7 +2,7 @@
 layout: default
 title: News
 ---
-
+<div id="news_left">
 {% for post in site.posts %}
 <div class="post">
 	<div class="post-title"><h3><a href="{{ post.url }}">{{ post.title }}</a></h3></div>
@@ -10,3 +10,11 @@ title: News
 	<div class="post-content">{% if post.excerpt == "" %}{{ post.content | strip_html | truncatewords: 35 }}{% else %}{{ post.excerpt }}{% endif %} [..] <a href="{{ post.url }}">Read more</a></div>
 </div>
 {% endfor %}
+</div>
+
+<div id="news_right">
+    <div id="news_tags">
+	<p>{{ tag_cloud }}</p>
+    </div>
+</div>
+<div class="blocker"></div>
