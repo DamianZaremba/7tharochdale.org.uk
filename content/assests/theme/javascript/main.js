@@ -41,6 +41,16 @@ function switcher(show_id) {
 	}
 }
 
+function fb_like(page) {
+	if(!page){
+		page = window.location;
+	}
+	document.write('<iframe src="http://www.facebook.com/plugins/like.php?href=' +
+	page + '&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;' +
+	'font&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:' +
+	'none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>');
+}
+
 /* Google stuff */
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-11817192-3']);

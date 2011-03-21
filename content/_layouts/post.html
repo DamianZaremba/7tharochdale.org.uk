@@ -21,10 +21,7 @@ layout: default
 -->
 <div id="comments">
 	<!-- <h2>Comments</h2> -->
-	<iframe src="http://www.facebook.com/plugins/like.php?href={{ site.basedomain }}/{{ page.url }}&amp;
-	layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;"
-	height=25" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;"
-	allowTransparency="true"></iframe>
+	<script type="text/javascript">fb_like('{{ site.basedomain }}/{{ page.url }}');</script>
 	<div id="disqus_thread"></div>
 </div>
 
