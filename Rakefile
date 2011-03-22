@@ -86,7 +86,7 @@ task :generate_gallery do
 	Dir.chdir("/tmp/7tharochdale.org.uk/")
 	albums = {}
 
-	base_url = "{{ site.basedomain }}"
+	base_url = "{{ site.basedomain }}/"
 	thumbnail_url = "/assests/gallery/image_thumbnails"
 	full_url = "/assests/gallery/images"
 	gallery_path = "/gallery"
