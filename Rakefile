@@ -14,7 +14,6 @@ task :default => [:prep, :generate_thumbs, :generate_gallery, :compile]
 
 desc "Setup the env"
 task :prep do
-	puts "Starting prep"
 	sh "rm -rf /tmp/7tharochdale.org.uk/"
 	sh "mkdir -p /tmp/7tharochdale.org.uk/"
 	sh "cp -r * /tmp/7tharochdale.org.uk/"
@@ -22,16 +21,14 @@ end
 
 desc "Compile site"
 task :compile do
-	puts "Starting compile"
 	Dir.chdir("/tmp/7tharochdale.org.uk/")
 	sh "rm -rf _site"
 	sh "jekyll"
 end
 
-task :push => [:prep, :generate_thumbs, :generate_gallery ,:compile, :minify_assests, :commit]
+task :push => [:prep, :generate_gallery ,:compile, :minify_assests, :commit]
 desc "Commit site"
 task :commit do
-	puts "Starting commit"
 	# This was all nicely using the git ruby stuff but it had major issues with branching so nvm
 	Dir.chdir("/tmp/7tharochdale.org.uk/_site/")
 	sh "git init"
@@ -47,25 +44,23 @@ end
 task :server => [:prep, :generate_thumbs, :generate_gallery, :run_server]
 desc "Run local server"
 task :run_server do
-	puts "Starting server"
 	Dir.chdir("/tmp/7tharochdale.org.uk/")
 	sh "jekyll --auto --server"
 	sh "rm -rf /tmp/7tharochdale.org.uk/"
 end
 
 task :generate_thumbs do
-	puts "Starting thumb generation"
 	Dir['/tmp/7tharochdale.org.uk/content/assests/gallery/images/**/*.png',
 		'/tmp/7tharochdale.org.uk/content/assests/gallery/images/**/*.jp*g'].each do |img|
 		begin
-			image = MiniMagick::Image.open(img)
-			image.resize "150X150"
-			new_path = img.sub("/gallery/images/", "/gallery/image_thumbnails/")
-			new_dir = File.dirname(new_path)
-			sh "mkdir -p #{new_dir}"
-			image.write(new_path)
+		    image = MiniMagick::Image.open(img)
+		    image.resize "150X150"
+		    new_path = img.sub("/gallery/images/", "/gallery/image_thumbnails/")
+		    new_dir = File.dirname(new_path)
+		    sh "mkdir -p #{new_dir}"
+		    image.write(new_path)
 		rescue
-			next
+		    next
 		end
 	end
 
@@ -82,11 +77,10 @@ task :generate_thumbs do
 end
 
 task :generate_gallery do
-	puts "Starting gallery generation"
 	Dir.chdir("/tmp/7tharochdale.org.uk/")
 	albums = {}
 
-	base_url = "{{ site.basedomain }}/"
+	base_url = "{{ site.basedomain }}"
 	thumbnail_url = "/assests/gallery/image_thumbnails"
 	full_url = "/assests/gallery/images"
 	gallery_path = "/gallery"
@@ -104,7 +98,7 @@ task :generate_gallery do
 			albums[dir]["parent"] = "Gallery"
 			albums[dir]["parent_url"] = base_url + gallery_path
 		else
-			albums[dir]["parent"] = parent.sub("_", " ").sub(/^(\w)/) {|s| s.capitalize}
+			albums[dir]["parent"] = parent
 			albums[dir]["parent_url"] = base_url + gallery_path + "/" + parent
 		end
 		albums[dir]["images"] = {}
@@ -129,9 +123,20 @@ task :generate_gallery do
 		next # error
 	end
 
-	description = image.comment
+	description = nil
+
+	if File.exists?(obj + "-DESCRIPTION")
+		file = File.open(obj + "-DESCRIPTION", "r")
+		description = file.read
+		file.close
+	end
+	    
 	if description == nil
-		description = name
+		description = image.comment
+	end
+
+	if description == nil
+		description = ""
 	end
 
 	albums[dir]["images"][name] = {}
@@ -143,7 +148,7 @@ task :generate_gallery do
 
 	sh "mkdir -p content/gallery/#{dir}"
 
-	# Write out the sngle page (we deal with album indexes later)
+	# Write out the single page (we deal with album indexes later)
 	fdata = <<EOS
 ---
 layout: default
@@ -153,7 +158,7 @@ title: #{description.sub(":", "")}
 <div class="gallery_single">
 <img src="#{base_url}/#{full_url}/#{img}" alt="#{description}" />
 <p class="description">#{description}</p>
-<p class="linkback">Back to <a href="#{base_url}/#{gallery_path}/#{dir}">#{dir}</a></p>
+<p class="linkback">Back to <a href="#{base_url}/#{gallery_path}/#{dir}">#{dir.sub("_", " ")}</a></p>
 </div>
 
 <div id="comments">
@@ -191,49 +196,43 @@ title: Gallery #{album["name"]}
 ---
 
 <div class="gallery_album_images">
+    <table><tr>
 EOS
 
 		    # Build out the images list
 		    images = album["images"]
 		    x = 1
-		    adata += "<table><tr>"
 		    images.each do |i, image|
-			if (x % 6) == 0
-				adata += "</tr><tr>"
-			end
-
 			adata += <<EOS
 			<td><a href="#{image["url"]}"><img src="#{image["thumb"]}" alt="#{image["desc"]}" /></a></td>
 EOS
-			x = x.succ
+
+		    if (x % 6) == 0
+			    adata += "</tr><tr>"
 		    end
-		    adata += "</tr></table>"
+		    x.succ
+		end
 
 		adata += <<EOS
+    </table>
 		<p class="linkback">Back to <a href="#{album["parent_url"]}">#{album["parent"]}</a></p>
 </div>
 
 EOS
 
-		if Dir["content/#{gallery_path}/#{album["folder"]}/*"].reject{|o| not File.directory?(o)}.length > 0
+		if Dir["content/#{gallery_path}/#{album["name"]}/*"].reject{|o| not File.directory?(o)}.length > 0
 		    adata += <<EOS
 <div class="gallery_album_subalbums">
     <h3>Sub albums</h3>
 EOS
 
 		    # Build out the sub albums list
-		    x = 1
-		    Dir["content/#{gallery_path}/#{album["folder"]}/*"].reject{|o| not File.directory?(o)}.each do |dir|
-			path = dir.sub("content/#{gallery_path}/", "")
-			dname = path.split("/")[1..-1].join("/").sub("_", " ").sub(/^(\w)/) {|s| s.capitalize}
-			if (x % 6) == 0
-				adata += "</p><p>"
-			end
-
-			adata += <<EOS
-				<p><a href="#{base_url}/#{gallery_path}/#{path}/">#{dname}</a></p>
+		    Dir["content/#{gallery_path}/#{album["name"]}/*"].reject{|o| not File.directory?(o)}.each do |dir|
+		    path = dir.sub("content/#{gallery_path}/", "")
+		    dname = path.split("/")[1..-1].join("/").sub("_", " ").sub(/^(\w)/) {|s| s.capitalize}
+		    adata += <<EOS
+		<p><a href="#{base_url}/#{gallery_path}/#{path}/">#{dname}</a></p>
 EOS
-			x.succ
 		    end
 
 		    adata += <<EOS
@@ -263,8 +262,6 @@ EOS
 
 		# Write the index page		
 		index_path = "content/#{gallery_path}/#{album["folder"]}/index.html"
-		index_dir = File.dirname(index_path)
-		sh "mkdir -p #{index_dir}"
 		fh = File.open(index_path, "w")
 		fh.write(adata)
 		fh.close
@@ -278,22 +275,21 @@ title: Gallery
 ---
 
 <div class="gallery_album_subalbums">
-	<h3>Sub albums</h3>
-	<p>
+    <p>
 EOS
 
 	x = 1
 	Dir["content/#{gallery_path}/*"].reject{|o| not File.directory?(o)}.each do |dir|
 		path = dir.sub("content/#{gallery_path}/", "")
 		dname = path.sub("_", " ")
-		if (x % 6) == 0
-			adata += "</p><p>"
-		end
-
 		adata += <<EOS
 		<a href="#{base_url}/#{gallery_path}/#{path}/">#{dname}</a>
 EOS
-		x.succ
+
+		if (x % 6) == 0
+			adata += "</p><p>"
+		end
+	    x.succ
 	end
 	adata += <<EOS
 	</p>
@@ -327,10 +323,13 @@ end
 task :minify => [:compile, :minify_assests]
 desc "Minify assests"
 task :minify_assests do
-	puts "Starting minify"
 	Dir.chdir("/tmp/7tharochdale.org.uk/_site/")
 	Dir['assests/**/*.js', 'assests/**/*.css'].each do |js|
 		sh "java -jar ~/bin/yuicompressor-2.4.2.jar #{js} -o #{js} --charset utf-8"
+	end
+
+	Dir['assests/**/*.png', 'assests/**/*.jp*g'].each do |img|
+		sh "convert -quality 0 #{img} #{img}"
 	end
 end
 
@@ -354,6 +353,6 @@ tags: []
 ---
 
 EOS
-			end
+		end
 	end
 end

@@ -1,0 +1,29 @@
+
+---
+layout: default
+title: {{{IMAGE_DESCRIPTION}}}
+---
+
+<div class="gallery_single">
+<img src="{{ site.basedomain }}/assests/gallery/images/{{{IMAGE_PATH}}}" alt="{{{IMAGE_DESCRIPTION}}}" />
+<p class="description">{{{IMAGE_DESCRIPTION}}}</p>
+<p class="linkback">Back to <a href="{{ site.basedomain }}/gallery/{{{IMAGE_GALLERY}}}/">{{{IMAGE_GALLERY_NAME}}}</a></p>
+</div>
+
+<div id="comments">
+<script type="text/javascript">fb_like('{{ site.basedomain }}/{{ page.url }}');</script>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = '7tharochdale';
+	var disqus_identifier = '{{ page.url }}';
+	var disqus_url = '{{ site.basedomain }}/{{ page.url }}';
+	(function() {
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</div>
