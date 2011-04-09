@@ -1,8 +1,3 @@
-$(function(){
-	$(".switch, .switch_hide").hide();
-	$(".switch_unhide").show();
-});
-
 function preLoadImages(imageArray){
 	$.each(imageArray, function (i, val) {
 		/* Lets just make a new dom img object and set it's src to this value, the browser should then cache the image making the hover effects work nicely with no loading delay! */
@@ -27,12 +22,12 @@ function switch_menu_image(item) {
 function switcher(show_id) {
 	var show = $("#" + show_id);
 	if (show.length) {
-		$(".switch").fadeOut("slow");
-
 		if (show.is(":visible")){
 			return true;
 		} else {
-			show.fadeIn("slow");
+			$(".switch").fadeOut("fast", function () {
+				show.fadeIn("slow");
+			});
 			return true;
 		}
 	} else {
@@ -45,6 +40,7 @@ function fb_like(page) {
 	if(!page){
 		page = window.location;
 	}
+
 	document.write('<iframe src="http://www.facebook.com/plugins/like.php?href=' +
 	page + '&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;' +
 	'font&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:' +
@@ -56,8 +52,22 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-11817192-3']);
 _gaq.push(['_trackPageview']);
 
-(function() {
+$(document).ready(function() {
 	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+
+	/* Try and auto load an section specified in the url */
+	if(window.location.href.indexOf('#') != -1){
+		requested_section = String(window.location.href.slice(window.location.href.indexOf('#') + 1));
+		if(requested_section.length != 0){
+			if($("#" + requested_section).length != 0){
+				switcher(requested_section);
+			}
+		}
+	}
+	
+	/* Deal with switches */
+	$(".switch, .switch_hide").hide();
+	$(".switch_unhide").show();
+});

@@ -2,19 +2,12 @@
 layout: default
 title: News
 ---
-<div id="news_left">
+
+<p><a href="{{ site.basedomain }}/news/categories">View news categories</a></p>
 {% for post in site.posts %}
 <div class="post">
 	<div class="post-title"><h3><a href="{{ post.url }}">{{ post.title }}</a></h3></div>
-	<div class="post-date">Posted by {{ post.author }} on {{ post.date | date_to_string }}</div>
+	<div class="post-date">{{ post.date | date_to_string }}</div>
 	<div class="post-content">{% if post.excerpt == "" %}{{ post.content | strip_html | truncatewords: 35 }}{% else %}{{ post.excerpt }}{% endif %} [..] <a href="{{ post.url }}">Read more</a></div>
 </div>
 {% endfor %}
-</div>
-
-<div id="news_right">
-    <div id="news_tags">
-	<p>{{ tag_cloud }}</p>
-    </div>
-</div>
-<div class="blocker"></div>

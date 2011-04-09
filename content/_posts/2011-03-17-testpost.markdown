@@ -17,4 +17,8 @@ categories:
 
 ---
 
-Test post!
+This is a test post to demonstrate that we have a static blog!
+
+This is generated from the markdown formated file in the _posts dir and the rendering can be customized as needed.
+
+Woow for lightweight blogging C=

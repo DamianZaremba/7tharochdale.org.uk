@@ -313,7 +313,8 @@ EOS
 	</script>
 </div>
 EOS
-	# Write the index page		
+	# Write the index page
+	sh "mkdir -p content/#{gallery_path}/"
 	index_path = "content/#{gallery_path}/index.html"
 	fh = File.open(index_path, "w")
 	fh.write(adata)

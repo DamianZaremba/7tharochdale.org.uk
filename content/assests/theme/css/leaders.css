@@ -1,0 +1,30 @@
+div#leaders_list {
+	float: left;
+	width: 150px;
+	overflow: hidden;
+}
+
+div#leaders_info {
+	float: left;
+	width: 746px;
+	overflow: hidden;
+}
+
+div#leaders_info div.leader_info {
+	border-width: 1px;
+	border-color: #000000;
+	border-style: solid;
+	padding: 5px;
+}
+
+div#leaders_info div img {
+	display: inline;
+}
+
+ul.leaders li h3 {
+	padding-top: 2px;
+}
+
+ul.leaders li ul {
+	margin-left: 10px;
+}
