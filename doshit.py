@@ -123,6 +123,7 @@ def build_gallery():
 			if album_dir[0:1] == ".": album_dir = album_dir[1:]
 
 			parent_album_dir = os.path.relpath(os.path.join(album_dir, ".."))
+			if parent_album_dir[0:2] == "./": parent_album_dir = parent_album_dir[2:]
 			if parent_album_dir[0:1] == ".": parent_album_dir = parent_album_dir[1:]
 			
 			album_name_file = os.path.realpath(os.path.join(album_dir, 'ALBUM_DESCRIPTION'))
@@ -157,9 +158,9 @@ def build_gallery():
 
 			albums[album_dir]["name"] = album_name
 			albums[album_dir]["path"] = album_dir
-			albums[album_dir]["url"] = '{{ site.basedomain }}/assests/gallery/%s' % album_dir
+			albums[album_dir]["url"] = '{{ site.basedomain }}/gallery/%s' % album_dir
 			albums[album_dir]["parent"] = parent_album_name
-			albums[album_dir]["parent_url"] = '{{ site.basedomain }}/assests/gallery/%s' % parent_album_dir
+			albums[album_dir]["parent_url"] = '{{ site.basedomain }}/gallery/%s' % parent_album_dir
 
 		for f in files:
 			real_path = os.path.join(root, f)
@@ -200,7 +201,8 @@ def build_gallery():
 				albums[album_dir]["images"][image_path] = {}
 				albums[album_dir]["images"][image_path]["album"] = album_dir
 				albums[album_dir]["images"][image_path]["author"] = image_author
-				albums[album_dir]["images"][image_path]["url"] = '{{ site.basedomain }}/assests/gallery/images/%s' % image_path
+				albums[album_dir]["images"][image_path]["url"] = '{{ site.basedomain }}/gallery/%s' % image_path
+				albums[album_dir]["images"][image_path]["image_url"] = '{{ site.basedomain }}/assests/gallery/images/%s' % image_path
 				albums[album_dir]["images"][image_path]["thumbnail_url"] = '{{ site.basedomain }}/assests/gallery/image_thumbnails/%s' % image_path
 				albums[album_dir]["images"][image_path]["desc"] = image_description
 				albums[album_dir]["images"][image_path]["name"] = os.path.basename(real_path)
@@ -216,18 +218,17 @@ def build_thumbnails():
 
 			if extension.lower() in [".png", ".jpeg", ".jpg"]:
 				new_path = path.replace('content/assests/gallery/images/', 'content/assests/gallery/image_thumbnails/', 1)
-				print(new_path)
-
 				image_dir = os.path.dirname(new_path)
 				if not os.path.isdir(image_dir):
 					os.makedirs(image_dir)
 
+				print "Writing out thumbnail '%s'" % new_path
 				try:
 					image = Image.open(path)
-					image = image.resize((150, 150), Image.ANTIALIAS)
+					image.thumbnail((150, 150), Image.ANTIALIAS)
 					image.save(new_path)
-				except:
-					pass
+				except Exception, e:
+					print e
 
 	for root, subFolders, files in os.walk('content/assests/gallery/video/'):
 		for f in files:
@@ -241,6 +242,7 @@ def build_thumbnails():
 				if not os.path.isdir(video_dir):
 					os.makedirs(video_dir)
 
+				print "Writing out video splash '%s'" % new_path
 				os.system("ffmpeg -i %s -r 1 -ss 00:00:05 -s 598x370 -an -qscale 1 %s.png" % (path, new_path))
 
 def minify_assets():
@@ -255,6 +257,11 @@ def minify_assets():
 				os.system("convert -quality 0 %s %s" % (path, path))
 
 def deploy():
+	if not os.path.isdir("_site"):
+		print "Bailing from deploy"
+		return False
+
+	print "Pushing to github"
 	os.chdir("_site")
 	os.system("git init")
 	os.system("git add *")
@@ -276,9 +283,13 @@ def run_server():
 
 def run_deploy():
 	print "Running deploy"
+	if os.path.isdir("_site"):
+		os.removedirs("_site")
+
 	build_gallery()
 	build_thumbnails()
 	minify_assets()
+	compile_site()
 	deploy()
 
 def create_post(post_title):
@@ -310,13 +321,11 @@ if __name__ == "__main__":
 	base_dir = os.path.dirname(os.path.realpath(__file__))
 	args = parser.parse_args()
 	if args.deploy == True:
-		run_deploy()
-	elif args.new:
-		create_post(args.new)
-	elif args.deploy == True:
 		tmp_dir = setup(base_dir)
 		run_deploy()
 		cleanup(tmp_dir)
+	elif args.new:
+		create_post(args.new)
 	else:
 		tmp_dir = setup(base_dir)
 		run_server()

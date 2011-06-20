@@ -4,9 +4,9 @@ title: "Gallery - #if $albums[$image['album']]['name'] != '' then "%s - %s" % ($
 ---
 
 <div class="gallery_single">
-<img src="$image['url']" alt="$image['desc']" />
-<p class="description">$image['desc']</p>
-<p class="author">$image['author']</p>
+<img src="$image['image_url']" alt="$image['desc']" />
+<p class="description">Description: $image['desc']</p>
+<p class="author">Author: $image['author']</p>
 <p class="linkback">Back to <a href="$albums[$image['album']]['url']">$albums[$image['album']]['name']</a></p>
 </div>
 
