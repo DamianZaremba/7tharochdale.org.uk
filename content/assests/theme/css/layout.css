@@ -102,5 +102,17 @@ div#right_content {
 }
 
 div#left_menu ul li {
+	margin-left: 10px;
 	margin-bottom: 5px;
+}
+
+table#contact_details {
+	width: 100%;
+	margin: 5px;
+}
+
+table#contact_details tr td, table#contact_details tr th {
+	text-align: left;
+	width: 25%;
+	padding-bottom: 2px;
 }

@@ -2,7 +2,7 @@ permalink: pretty
 markdown: rdiscount
 pygments: true
 lsi: true
-exclude: Capfile, Rakefile, scripts, README
+exclude: 7thARochdale.komodoproject, README.md, doshit.py, templates
 source: content
-basedomain: http://127.0.0.1:4000
-#basedomain: http://7tharochdale.dev.nodehost.co.uk
+#basedomain: http://127.0.0.1:4000
+basedomain: http://7tharochdale.dev.nodehost.co.uk

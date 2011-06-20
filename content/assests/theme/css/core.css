@@ -127,3 +127,7 @@
 .blocker {
 	clear: both;
 }
+
+img.uniform {
+	max-width: 740px;
+}
