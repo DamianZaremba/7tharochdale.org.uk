@@ -1,0 +1,79 @@
+---
+layout: default
+title: Live news
+---
+<p><a href="{{ site.basedomain }}/news/categories">Categories</a> | <a href="{{ site.basedomain }}/news/">News</a></p>
+
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<div class="tweet_block">
+<script>
+	new TWTR.Widget({
+		version: 2,
+		type: 'profile',
+		rpp: 10,
+		interval: 6000,
+		width: 250,
+		height: 300,
+		theme: {
+			shell: {
+				background: '#4d2177',
+				color: '#ffffff'
+			},
+			tweets: {
+				background: '#4d2177',
+				color: '#ffffff',
+				links: '#83a40b'
+			}
+		},
+	features: {
+		scrollbar: true,
+		loop: true,
+		live: true,
+		hashtags: true,
+		timestamp: true,
+		avatars: true,
+		behavior: 'all'
+	}
+	})
+	.render()
+	.setUser('7tha_rochdale')
+	.start();
+</script>
+</div>
+
+<div class="tweet_block">
+<script>
+	new TWTR.Widget({
+		version: 2,
+		type: 'profile',
+		rpp: 10,
+		interval: 6000,
+		width: 250,
+		height: 300,
+		theme: {
+			shell: {
+				background: '#4d2177',
+				color: '#ffffff'
+			},
+			tweets: {
+				background: '#4d2177',
+				color: '#ffffff',
+				links: '#83a40b'
+			}
+		},
+	features: {
+		scrollbar: true,
+		loop: true,
+		live: true,
+		hashtags: true,
+		timestamp: true,
+		avatars: true,
+		behavior: 'all'
+	}
+	})
+	.render()
+	.setUser('UKScouting')
+	.start();
+</script>
+</div>
+<div class="blocker"></div>

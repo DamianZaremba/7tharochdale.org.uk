@@ -53,6 +53,11 @@
 	font-size: 12px;
 }
 
+#footer_left p.small {
+	font-size: 10px;
+	font-weight: none;
+}
+
 #footer_webring {
 	float: right;
 	margin-top: 6px;
@@ -130,4 +135,8 @@
 
 img.uniform {
 	max-width: 740px;
+}
+
+.switch {
+	display: block;
 }

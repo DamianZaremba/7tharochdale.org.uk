@@ -69,12 +69,12 @@ title: "Gallery - #if $album['name'] != '' then $album['name'] else 'home' #"
 #end if
 
 <div id="comments">
-	<script type="text/javascript">fb_like('{{ site.basedomain }}/{{ page.url }}');</script>
+	<script type="text/javascript">fb_like('{{ site.basedomain }}{{ page.url }}');</script>
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		var disqus_shortname = '7tharochdale';
 		var disqus_identifier = '{{ page.url }}';
-		var disqus_url = '{{ site.basedomain }}/{{ page.url }}';
+		var disqus_url = '{{ site.basedomain }}{{ page.url }}';
 		(function() {
 			var dsq = document.createElement('script');
 			dsq.type = 'text/javascript';

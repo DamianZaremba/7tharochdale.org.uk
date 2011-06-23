@@ -25,8 +25,14 @@ function switcher(show_id) {
 		if (show.is(":visible")){
 			return true;
 		} else {
-			$(".switch").fadeOut("fast", function () {
-				show.fadeIn("fast");
+			elements = $(".switch");
+			lastId = elements.length - 1;
+			elements.each(function(i) {
+				$(this).fadeOut("fast");
+
+				if(i == lastId) {
+					show.fadeIn("fast");
+				}
 			});
 			return true;
 		}

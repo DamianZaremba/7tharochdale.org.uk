@@ -4,6 +4,5 @@ pygments: true
 lsi: true
 exclude: 7thARochdale.komodoproject, README.md, doshit.py, templates
 source: content
-server_port: 4000
-basedomain: http://10.44.200.5:4000
+basedomain: http://localhost:4000
 #basedomain: http://7tharochdale.dev.nodehost.co.uk
