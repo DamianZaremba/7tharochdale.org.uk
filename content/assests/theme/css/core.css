@@ -1,3 +1,21 @@
+/* Core style stuff */
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+body {
+	background-color: #F8F8F8;
+}
+
+/* Menu style stuff */
+#menu {
+	width: 900px;
+	height: 35px;
+	margin: 0 auto;
+}
+
 #menu ul {
 	list-style-type: none;
 	z-index: 3;
@@ -23,6 +41,7 @@
 	display: none;
 }
 
+/* Menu hover stuff */
 #menu li:hover ul {
 	display: block;
 }
@@ -39,6 +58,32 @@
 	width: 130px;
 }
 
+/* Header style stuff */
+#header {
+	width: 900px;
+	height: 200px;
+	margin: 0 auto;
+	
+	background-color: #FFFFFF;
+	background-image: url('../images/header.png');
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+#header_text {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+/* Footer style stuff */
+#footer {
+	width: 900px;
+	height: 110px;
+	margin: 0 auto;
+	margin-top: 5px;
+	background-color: #522e91;
+}
+
 #footer_left {
 	float: left;
 	margin-top: 15px;
@@ -51,6 +96,11 @@
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 12px;
+}
+
+#footer_left p.small {
+	font-size: 10px;
+	font-weight: none;
 }
 
 #footer_webring {
@@ -105,6 +155,25 @@
 	padding-bottom: 2px;
 }
 
+/* Content holder style stuff */
+#content_holder {
+	width: 900px;
+	margin: 0 auto;
+}
+
+/* Main content style stuff */
+#main_content {
+	width: 900px;
+	background: #FFFFFF;
+}
+
+/* Right content style stuff */
+div#right_content {
+	float: left;
+	width: 746px;
+	overflow: hidden;
+}
+
 #main_content h2 {
 	padding-top: 10px;
 	margin-bottom: 5px;
@@ -120,10 +189,301 @@
 	font-size: 14px;
 }
 
+/* FAQ style stuff */
+#faq_list h4 {
+	padding-top: 3px;
+}
+
+#faq_list p {
+	margin-top: 2px;
+	padding: 5px;
+}
+
+#faq_list a {
+	color: #000000;
+}
+
+/* We don't shrink the images because we want to print them bigger.... */
+img.uniform {
+	max-width: 740px;
+}
+
+/* Gallery style stuff */
+div#viewer {
+	height: 400px;
+	width: 600px;
+	float: left;
+}
+
+div#viewer div.info {
+	width: 600px;
+	border: 1px solid #999;
+	overflow: hidden;
+	float: left;
+	text-align: center;
+}
+
+div#viewer div.image {
+	/* height: 370px; */
+	width: 600px;
+	overflow: hidden;
+	float: left;
+	text-align: center;
+}
+
+div#viewer div.image img {
+	max-height: 370px;
+	max-width: 600px;
+}
+
+div#switcher {
+	height: 190px;
+	width: 280px;
+	float: right;
+}
+
+div#switcher div#photo-list {
+	height: 170px;
+	width: 280px;
+}
+
+div#switcher a.next {
+	margin-left: 160px;
+}
+
+div#switcher a.prev {
+	margin-left: 10px;
+}
+
+div#albums {
+	height: 190px;
+	width: 280px;
+	float: right;
+	margin-top: 20px;
+}
+
+div#albums div#album-list {
+	height: 170px;
+	width: 280px;
+}
+
+div#albums a.next {
+	margin-left: 160px;
+}
+
+div#albums a.prev {
+	margin-left: 10px;
+}
+
+/* Leader pages style stuff */
+div#leaders_list {
+	float: left;
+	width: 150px;
+	overflow: hidden;
+}
+
+div#leaders_info {
+	float: left;
+	width: 746px;
+	overflow: hidden;
+}
+
+div#leaders_info div.leader_info {
+	border-width: 1px;
+	border-color: #000000;
+	border-style: solid;
+	padding: 5px;
+}
+
+div#leaders_info div img {
+	display: inline;
+}
+
+ul.leaders li h3 {
+	padding-top: 2px;
+}
+
+ul.leaders li ul {
+	margin-left: 10px;
+}
+
+/* Section pages style stuff */
+#news_left {
+	float: left;
+	width: 700px;
+}
+
+#news_right {
+	float: right;
+	width: 200px;
+	margin-right: 5px;
+}
+
+div.gallery_single {
+	max-width: 900px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+div.gallery_single {
+	max-width: 900px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+div.gallery_single p.linkback {
+	text-align: left;
+}
+
+#comments {
+	margin: 5px;
+}
+
+div.gallery_album_images {
+	max-width: 900px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+div.gallery_album_images table {
+	border: 0px;
+	width: 100%;
+}
+
+div.gallery_album_subalbums {
+	max-width: 900px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+div.gallery_album_subalbums table {
+	border: 0px;
+	width: 100%;
+}
+
+div.gallery_album_subalbums table tr td {
+	vertical-align: middle;
+}
+
+div.gallery_album_images table td {
+	padding: 5px;
+}
+
+div.gallery_album_images p.linkback {
+	text-align: left;
+}
+
+/* Section menu style stuff */
+div#left_menu {
+	float: left;
+	width: 150px;
+	overflow: hidden;
+}
+
+div#left_menu ul li {
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+
+/* Video player stuff */
+a.videoPlayer{
+	margin: 5px;
+	text-align:center;
+	display:block;
+	width:520px;
+	height:330px;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+div.gallery_video a.videoPlayer{
+	text-align:center;
+	display:block;
+	height:370px;
+	width:598px;
+	overflow:hidden;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+a.videoPlayer img{
+	margin-top:120px;
+	width:83px;
+	height:83px;
+}
+
+div.gallery_video a.videoPlayer img{
+	margin-top:150px;
+	width:83px;
+	height:83px;
+}
+
+/* Post style stuff */
+div.post {
+	border: 1px dotted #000000;
+	padding: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+div.post-date {
+	font-size: 12px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+#comments {
+	margin-top: 5px;
+}
+
+#disqus_thread {
+	display: block;
+}
+
+/* Twitter style stuff */
+div.tweet_block {
+	float: left;
+	margin-right: 20px;
+}
+
+/* Contact details style stuff */
+table#contact_details {
+	width: 100%;
+	margin: 5px;
+}
+
+table#contact_details tr td, table#contact_details tr th {
+	text-align: left;
+	width: 20%;
+	padding-bottom: 2px;
+}
+
+/* General style stuff */
+a {
+	color: #522e91;
+}
+
+a:hover {
+	color: #86A20B;
+}
+
+h3, h4, h5, h6 {
+	margin-bottom: 2px;
+	margin-top: 5px;
+}
+
 .hidden {
 	display: none;
 }
 
 .blocker {
 	clear: both;
+}
+
+.switch {
+	display: block;
+}
+
+div.calendar {
+	text-align: center;
 }

@@ -1,27 +1,14 @@
 ---
-layout: default
+layout: master
 ---
+<p><a href="{{ site.basedomain }}/news/categories">Categories</a> | <a href="{{ site.basedomain }}/news/">News</a></p>
 <div class="post">
 	<div class="post-date">Posted by {{ page.author }} on {{ page.date | date_to_string }}</div>
 	{{ content }}
 </div>
-<!--
-<div id="related">
-	{% if site.related_posts != "" %}
-	<h4>Possibly Related Posts</h4>
-	<ul class="posts">
-		{% for post in site.related_posts limit:3 %}
-		<li><span>{{ post.date | date_to_string }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
-		{% endfor %}
-	</ul>
-	{% else %}
-	<p>No related posts</p>
-	{% endif %}
-</div>
--->
+
 <div id="comments">
-	<!-- <h2>Comments</h2> -->
-	<script type="text/javascript">fb_like('{{ site.basedomain }}/{{ page.url }}');</script>
+	{% fb_like %}
 	<div id="disqus_thread"></div>
 </div>
 

@@ -1,64 +1,119 @@
-$(function(){
-	$(".switch, .switch_hide").hide();
-	$(".switch_unhide").show();
-});
-
 function preLoadImages(imageArray){
 	$.each(imageArray, function (i, val) {
-		/* Lets just make a new dom img object and set it's src to this value, the browser should then cache the image making the hover effects work nicely with no loading delay! */
+		/*
+			Lets just make a new dom img object and set it's src to this value,
+			the browser /should/ then cache the image making the hover effects work nicely with no loading delay!
+		*/
 		cacheImage = document.createElement('img').src = val;
 	});
 }
 
 function switch_menu_image(item) {
-	/* Hack! */
+	/* Hack to get the current image stuff. */
 	image_parts = item.getAttribute('src').split('/');
 	image_path = image_parts.splice(0, image_parts.length-1).join("/");
 	image_name = image_parts[image_parts.length-1];
 
-	if(image_name.split('depressed_').length == 2){ // We are the depressed image
+	if(image_name.split('depressed_').length == 2){
+		/*
+			We are the depressed image, lets load the happy image
+		*/
 		replace_image = image_path+'/'+image_name.split('depressed_')[1];
-	}else{ // We are the happy image (ha!)
+	}else{
+		/*
+			We are the happy image (ha!), lets load the depressed image
+		*/
 		replace_image = image_path+'/depressed_'+image_name;
 	}
+	/* Actually do the update to the image src */
 	item.src = replace_image;
 }
 
-function switcher(show_id) {
+function switcher(show_id, init) {
+	/* Get the object we want to show */
 	var show = $("#" + show_id);
-	if (show.length) {
-		$(".switch").fadeOut("slow");
 
+	/* Test the object is valid */
+	if (show.length) {
+		/* Test the object is not allready displaying */
 		if (show.is(":visible")){
+			if(!init) {
+				show.fadeOut("fast");
+			}
 			return true;
 		} else {
-			show.fadeIn("slow");
-			return true;
+			/* Get all the switch elements on the page */
+			elements = $(".switch");
+
+			/* Figure out how many switch elements there are on this page */
+			lastId = elements.length - 1;
+
+			/* Loop though the elements */
+			elements.each(function(i) {
+				/* Fade out the image */
+				$(this).fadeOut("fast");
+
+				/* Check if this is the last element we need to fade out */
+				if(i == lastId) {
+					/* Fade in the element we want to show */
+					show.fadeIn("fast");
+					return true;
+				}
+			});
 		}
+	/* Show object is not valid, return false */
 	} else {
-		alert("Sorry we could not find that information!");
 		return false;
 	}
 }
 
-function fb_like(page) {
-	if(!page){
-		page = window.location;
-	}
+function popup(link, width, height) {
+	/* Create a new window object */
+	newwindow = window.open(link, 'popup_window', 'width=' + width + ',height=' + height);
 
-	document.write('<iframe src="http://www.facebook.com/plugins/like.php?href=' +
-	page + '&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;' +
-	'font&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:' +
-	'none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>');
+	/* Tell the browser to focus on the new window */
+	newwindow.focus()
+
+	/* Stop any furthur actions */
+	return false;
 }
 
-/* Google stuff */
+/* Google analytics stuff */
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-11817192-3']);
 _gaq.push(['_trackPageview']);
 
-(function() {
+/* Things we need to do when the document is ready */
+$(document).ready(function() {
+	/* Init the analytics stuff */
 	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+
+	/*
+		Hide any displaying switches,
+		we don't hide them in css in case js is disabled.
+	*/
+	$(".switch, .switch_hide").hide('fast', function () {
+		/* Try and auto load an section specified in the url */
+		if(window.location.href.indexOf('#') != -1){
+			/* Figure out the requested section */
+			requested_section = String(window.location.href.slice(window.location.href.indexOf('#') + 1));
+
+			/* Check the requested section is a larger than 0 */
+			if(requested_section.length != 0){
+				/* Check the requested section is valid */
+				if($("#" + requested_section).length != 0){
+					/*
+						Pass the string off to the switcher to actually load it,
+						this saves code duplication as the switcher does magic to tidy stuff up
+					*/
+					switcher(requested_section, 1);
+				}
+			}
+		}
+
+		/* Make any elements with the .switch_unhide class displayable */
+		$(".switch_unhide").show();
+	});
+});

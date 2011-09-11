@@ -8,9 +8,9 @@ body {
 	background-color: #F8F8F8;
 }
 
-h3 {
-	padding-top: 3px;
-	margin-bottom: 5px;
+h3, h4, h5, h6 {
+	margin-bottom: 2px;
+	margin-top: 5px;
 }
 
 #faq_list h4 {
@@ -58,6 +58,14 @@ h3 {
 	background-color: #522e91;
 }
 
+a {
+	color: #522e91;
+}
+
+a:hover {
+	color: #86A20B;
+}
+
 #faq_list p {
 	margin-top: 2px;
 	padding: 5px;
@@ -75,8 +83,48 @@ h3 {
 	display: block;
 }
 
+div.post {
+	border: 1px dotted #000000;
+	padding: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
 div.post-date {
 	font-size: 12px;
 	margin-top: 2px;
 	margin-bottom: 2px;
+}
+
+div#left_menu {
+	float: left;
+	width: 150px;
+	overflow: hidden;
+}
+
+div#right_content {
+	float: left;
+	width: 746px;
+	overflow: hidden;
+}
+
+div#left_menu ul li {
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+
+table#contact_details {
+	width: 100%;
+	margin: 5px;
+}
+
+table#contact_details tr td, table#contact_details tr th {
+	text-align: left;
+	width: 20%;
+	padding-bottom: 2px;
+}
+
+div.tweet_block {
+	float: left;
+	margin-right: 20px;
 }

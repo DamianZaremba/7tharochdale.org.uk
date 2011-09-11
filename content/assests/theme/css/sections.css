@@ -37,11 +37,28 @@ div.gallery_album_images {
 
 div.gallery_album_images table {
 	border: 0px;
+	width: 100%;
+}
+
+div.gallery_album_subalbums {
+	max-width: 900px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+div.gallery_album_subalbums table {
+	border: 0px;
+	width: 100%;
+}
+
+div.gallery_album_subalbums table tr td {
+	vertical-align: middle;
 }
 
 div.gallery_album_images table td {
 	padding: 5px;
 }
+
 div.gallery_album_images p.linkback {
 	text-align: left;
 }
