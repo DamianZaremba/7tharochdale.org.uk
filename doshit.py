@@ -181,8 +181,11 @@ def build_gallery():
 					fh.close()
 
 				if image_description == '':
-					image = pyexif.ExifEditor(real_path)
-					image_description = image.getTag('Comment')
+					try:
+						image = pyexif.ExifEditor(real_path)
+						image_description = image.getTag('Comment')
+					except:
+						pass
 
 				author_path = os.path.realpath(os.path.join(real_path, '-AUTHOR'))
 				if os.path.isfile(author_path):

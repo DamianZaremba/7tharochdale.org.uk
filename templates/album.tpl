@@ -69,7 +69,7 @@ title: "Gallery - #if $album['name'] != '' then $album['name'] else 'home' #"
 #end if
 
 <div id="comments">
-	{% fb_like %}
+	{% like_buttons %}
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		var disqus_shortname = '7tharochdale';

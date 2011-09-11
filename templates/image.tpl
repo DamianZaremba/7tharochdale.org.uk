@@ -12,7 +12,7 @@ title: "Gallery - #if $albums[$image['album']]['name'] != '' then $albums[$image
 </div>
 
 <div id="comments">
-{% fb_like %}
+{% like_buttons %}
 <div id="disqus_thread"></div>
 <script type="text/javascript">
 	var disqus_shortname = '7tharochdale';
