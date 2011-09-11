@@ -1,0 +1,17 @@
+---
+layout: master
+title: Live news
+---
+<p><a href="{{ site.basedomain }}/news/categories">Categories</a> | <a href="{{ site.basedomain }}/news/">News</a></p>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+
+<!-- 7th A Rochdale twitter feed -->
+<div class="tweet_block">
+	{% twitter_feed 7tha_rochdale %}
+</div>
+
+<!-- UK Scouting twitter feed -->
+<div class="tweet_block">
+	{% twitter_feed UKScouting %}
+</div>
+<div class="blocker"></div>
