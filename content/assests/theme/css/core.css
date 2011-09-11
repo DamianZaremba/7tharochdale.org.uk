@@ -480,6 +480,7 @@ h3, h4, h5, h6 {
 	clear: both;
 }
 
+<<<<<<< HEAD
 .switch {
 	display: block;
 }
@@ -487,3 +488,12 @@ h3, h4, h5, h6 {
 div.calendar {
 	text-align: center;
 }
+=======
+img.uniform {
+	max-width: 740px;
+}
+
+.switch {
+	display: block;
+}
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b

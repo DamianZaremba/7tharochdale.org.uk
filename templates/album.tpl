@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 layout: master
+=======
+layout: default
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 title: "Gallery - #if $album['name'] != '' then $album['name'] else 'home' #"
 ---
 
@@ -17,7 +21,11 @@ title: "Gallery - #if $album['name'] != '' then $album['name'] else 'home' #"
 	<p>$album['images'][$image]['desc']</p>
 	</td>
 
+<<<<<<< HEAD
 	#if $i == 4:
+=======
+	#if $i == 6:
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 	</tr><tr>
 	#end if	
 	#set $i += 1
@@ -69,7 +77,11 @@ title: "Gallery - #if $album['name'] != '' then $album['name'] else 'home' #"
 #end if
 
 <div id="comments">
+<<<<<<< HEAD
 	{% fb_like %}
+=======
+	<script type="text/javascript">fb_like('{{ site.basedomain }}{{ page.url }}');</script>
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		var disqus_shortname = '7tharochdale';

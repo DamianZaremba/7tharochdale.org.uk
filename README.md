@@ -21,6 +21,7 @@ The site uses Jekyll for transforming the source into the live site
 
 Blog
 ------
+<<<<<<< HEAD
 To add stuff into the _posts folder, use ./doshit.py --new <title> so the created file is correctly formatted.
 Once the file is added you may edit it as usual, the only required part is the header is as follows:
 `---
@@ -30,12 +31,16 @@ author: <authors name>
 tags: <list of post tags>
 ---`
 The head is YAML formatted.
+=======
+Add stuff into the _posts folder, use ./doshit.py --new <title> to add a correctly formatted file
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 
 Gallery
 -------
 We build the gallery from the dir structure, some helpful notes are as follows:
 
 ## Templates
+<<<<<<< HEAD
 See the templates/ folder - we use cheetah to build the templates for jekyll to transform.
 
 ## Albums
@@ -46,3 +51,17 @@ If you want to display a different name then add it into a file called ALBUM_DES
 To add a description to images add stuff into a file called $image_file_name-DESCRIPTION
 
 To add author info add stuff into $image_file_name-DESCRIPTION
+=======
+See the templates/ folder - we use cheetah and a little jekyll
+
+## Albums
+By default the album name is the album folder with "_" substituted for " "
+If you want to display a different name then add it into << album dir >>/ALBUM_DESCRIPTION
+
+## Images
+To add a description to images add stuff into
+<< image file >>-DESCRIPTION
+
+To add author info add stuff into
+<< image file >>-AUTHOR
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b

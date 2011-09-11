@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 layout: master
+=======
+layout: default
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 title: "Gallery - #if $albums[$image['album']]['name'] != '' then $albums[$image['album']]['name'] else '' #
  #if $image['desc'] and $image['desc'] != '' then ' - ' + $image['desc'] else '' #
 ---
@@ -12,7 +16,11 @@ title: "Gallery - #if $albums[$image['album']]['name'] != '' then $albums[$image
 </div>
 
 <div id="comments">
+<<<<<<< HEAD
 {% fb_like %}
+=======
+<script type="text/javascript">fb_like('{{ site.basedomain }}{{ page.url }}');</script>
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 <div id="disqus_thread"></div>
 <script type="text/javascript">
 	var disqus_shortname = '7tharochdale';

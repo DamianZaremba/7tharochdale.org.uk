@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 	This file is included on "print pages",
 	these pages are very stripped down and suitable for printing.
@@ -12,5 +13,9 @@ $(document).ready(function() {
 	window.print();
 
 	/* Close the window */
+=======
+$(document).ready(function() {
+	window.print();
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 	self.close();
 });

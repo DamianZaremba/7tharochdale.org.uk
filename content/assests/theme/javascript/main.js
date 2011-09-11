@@ -42,6 +42,7 @@ function switcher(show_id, init) {
 			}
 			return true;
 		} else {
+<<<<<<< HEAD
 			/* Get all the switch elements on the page */
 			elements = $(".switch");
 
@@ -58,6 +59,15 @@ function switcher(show_id, init) {
 					/* Fade in the element we want to show */
 					show.fadeIn("fast");
 					return true;
+=======
+			elements = $(".switch");
+			lastId = elements.length - 1;
+			elements.each(function(i) {
+				$(this).fadeOut("fast");
+
+				if(i == lastId) {
+					show.fadeIn("fast");
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 				}
 			});
 		}
@@ -78,7 +88,24 @@ function popup(link, width, height) {
 	return false;
 }
 
+<<<<<<< HEAD
 /* Google analytics stuff */
+=======
+function popup(link, width, height) {
+	var href;
+	if(typeof(link) == 'string') {
+		href=link;
+	} else {
+		href = link.href;
+	}
+
+	newwindow = window.open(href, 'popup_window', 'width=' + width + ',height=' + height);
+	newwindow.focus()
+	return false;
+}
+
+/* Google stuff */
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-11817192-3']);
 _gaq.push(['_trackPageview']);
@@ -90,6 +117,7 @@ $(document).ready(function() {
 	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 
+<<<<<<< HEAD
 	/*
 		Hide any displaying switches,
 		we don't hide them in css in case js is disabled.
@@ -109,11 +137,24 @@ $(document).ready(function() {
 						this saves code duplication as the switcher does magic to tidy stuff up
 					*/
 					switcher(requested_section, 1);
+=======
+	/* Deal with switches */
+	$(".switch, .switch_hide").hide('fast', function () {
+		/* Try and auto load an section specified in the url */
+		if(window.location.href.indexOf('#') != -1){
+			requested_section = String(window.location.href.slice(window.location.href.indexOf('#') + 1));
+			if(requested_section.length != 0){
+				if($("#" + requested_section).length != 0){
+					switcher(requested_section);
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 				}
 			}
 		}
 
+<<<<<<< HEAD
 		/* Make any elements with the .switch_unhide class displayable */
+=======
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 		$(".switch_unhide").show();
 	});
 });

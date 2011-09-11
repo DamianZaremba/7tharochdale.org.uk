@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/usr/bin/env python
+=======
+#!/usr/bin/env python2.7
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 import os
 from Cheetah.Template import Template
 from distutils import dir_util
@@ -156,10 +160,17 @@ def build_gallery():
 				albums[album_dir]["images"] = {}
 				albums[album_dir]["sub_albums"] = []
 
+<<<<<<< HEAD
 			albums[album_dir]["name"] = album_name.strip()
 			albums[album_dir]["path"] = album_dir
 			albums[album_dir]["url"] = '{{ site.basedomain }}/gallery/%s' % album_dir
 			albums[album_dir]["parent"] = parent_album_name.strip()
+=======
+			albums[album_dir]["name"] = album_name
+			albums[album_dir]["path"] = album_dir
+			albums[album_dir]["url"] = '{{ site.basedomain }}/gallery/%s' % album_dir
+			albums[album_dir]["parent"] = parent_album_name
+>>>>>>> 8af8dd6c0e4b055d3db04a502c105134b5b4f32b
 			albums[album_dir]["parent_url"] = '{{ site.basedomain }}/gallery/%s' % parent_album_dir
 
 		for f in files:
