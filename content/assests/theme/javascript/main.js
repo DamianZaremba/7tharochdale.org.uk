@@ -29,7 +29,7 @@ function switch_menu_image(item) {
 	item.src = replace_image;
 }
 
-function switcher(show_id, init) {
+function switcher(show_id) {
 	/* Get the object we want to show */
 	var show = $("#" + show_id);
 
@@ -37,9 +37,6 @@ function switcher(show_id, init) {
 	if (show.length) {
 		/* Test the object is not allready displaying */
 		if (show.is(":visible")){
-			if(!init) {
-				show.fadeOut("fast");
-			}
 			return true;
 		} else {
 			/* Get all the switch elements on the page */
@@ -65,6 +62,24 @@ function switcher(show_id, init) {
 	} else {
 		return false;
 	}
+}
+
+function fb_like(page) {
+	/*
+		If the page is not specified then pull the page from window.location,
+		this is a fallback only and shouldn't be relied upon.
+	*/
+	if(!page){
+		page = window.location;
+	}
+
+	/* Write out the facebook iframe */
+	document.write(
+		'<iframe src="http://www.facebook.com/plugins/like.php?href=' + page +
+		'&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;' +
+		'font&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:' +
+		'none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>'
+	);
 }
 
 function popup(link, width, height) {
@@ -108,7 +123,7 @@ $(document).ready(function() {
 						Pass the string off to the switcher to actually load it,
 						this saves code duplication as the switcher does magic to tidy stuff up
 					*/
-					switcher(requested_section, 1);
+					switcher(requested_section);
 				}
 			}
 		}

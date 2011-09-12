@@ -63,7 +63,7 @@ body {
 	width: 900px;
 	height: 200px;
 	margin: 0 auto;
-
+	
 	background-color: #FFFFFF;
 	background-image: url('../images/header.png');
 	background-position: left center;
@@ -486,4 +486,8 @@ h3, h4, h5, h6 {
 
 div.calendar {
 	text-align: center;
+}
+
+div.gallery_single img {
+	max-width: 900px;
 }

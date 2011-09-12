@@ -4,7 +4,7 @@
 
 	On inclusion of this file, once the document is ready it will
 	tell the brower to print the document.
-
+	
 	This will load the printer dialog then once done, the window will close
 */
 $(document).ready(function() {
