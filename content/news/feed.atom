@@ -18,9 +18,14 @@ layout: nil
 		<link href="{{ site.basedomain }}/{{ post.url }}" />
 		<updated>{{ post.date | date_to_xmlschema }}</updated>
 		<id>{{ site.basedomain }}/{{ post.id }}</id>
+		<description>{{ post.content | strip_html | truncatewords: 35 }} [..]</description>
 		<content type="html">
 			{{ post.content | xml_escape }}
 		</content>
+	<author>
+		<name>{{ post.author }}</name>
+		<email>group@7tharochdale.org.uk</email>
+	</author>
 	</entry>
 	{% endfor %}
 </feed>
