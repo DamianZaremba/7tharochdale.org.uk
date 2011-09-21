@@ -13,6 +13,8 @@ LIVE_SITE_PATH = os.path.realpath(os.path.join(
 	os.path.dirname(__file__),
 	"../", "7tharochdale-live"
 ))
+#DOMAIN = "7tharochdale.org.uk"
+DOMAIN = "http://7tharochdale.dev.nodehost.co.uk"
 
 def setup(source_dir):
 	'''
@@ -39,6 +41,18 @@ def compile_site():
 	'''
 	if os.path.isdir("_site"):
 		os.removedirs("_site")
+
+	fh = open('_config.yml', 'r+')
+	config = ""
+
+	for line in fh.readlines():
+		(key, value) = line.split(':', 1)
+		if key == "basedomain": continue
+		config += "%s: %s\n" % (key, value)
+	config += "basedomain: %s\n" % DOMAIN
+
+	fh.write(config)
+	fh.close()
 	os.system("jekyll")
 
 def handle_gallery(albums):
