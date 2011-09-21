@@ -9,7 +9,10 @@ import pyexif
 import tempfile
 
 # Path we store a copy of the live site in (saves huge bw and forcing pushes)
-LIVE_SITE_PATH = os.path.join(os.path.realpath(os.path.dirname(__file__)), "_site")
+LIVE_SITE_PATH = os.path.realpath(os.path.join(
+	os.path.dirname(__file__),
+	"../", "7tharochdale-live"
+))
 
 def setup(source_dir):
 	'''
@@ -316,6 +319,7 @@ def clone_site():
 	'''
 	os.chdir(LIVE_SITE_PATH)
 	os.system("git clone -b live ssh://git@github.com:22/DamianZaremba/7tharochdale.org.uk.git %s" % LIVE_SITE_PATH)
+	os.system("git checkout live")
 	os.chdir(TMP_DIR)
 
 def pull_site():
@@ -345,7 +349,7 @@ def dev_to_live():
 	We don't transform into the live site path directory to stop Jekyll doing
 	anything insane. Also rsync does a nice job of tidying.
 	'''
-	os.system("rsync -vr --delete '%s/_site/' '%s/'" % (TMP_DIR, LIVE_SITE_PATH))
+	os.system("rsync -vr --delete --exclude='.git' '%s/_site/' '%s/'" % (TMP_DIR, LIVE_SITE_PATH))
 
 def run_deploy():
 	'''
