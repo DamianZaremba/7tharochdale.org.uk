@@ -8,7 +8,15 @@ import argparse
 import pyexif
 import tempfile
 
+# Path we store a copy of the live site in (saves huge bw and forcing pushes)
+LIVE_SITE_PATH = os.path.join(os.path.dirname(__file__), "_site")
+
 def setup(source_dir):
+	'''
+	Creates a temporary dir and chdir's into it.
+	Use for running the dev server in a clean env
+	Also does the code copy to save code dublication
+	'''
 	dir_path = tempfile.mkdtemp()
 	if os.path.isdir(source_dir):
 		dir_util.copy_tree(source_dir, dir_path)
@@ -16,15 +24,24 @@ def setup(source_dir):
 	return dir_path
 
 def cleanup(dir_path):
+	'''
+	Cleans up the temporary dir as created by setup
+	'''
 	if os.path.isdir(dir_path):
 		dir_util.remove_tree(dir_path)
 
 def compile_site():
+	'''
+	Calls Jekyll to actually compile (transform) the source
+	'''
 	if os.path.isdir("_site"):
 		os.removedirs("_site")
 	os.system("jekyll")
 
 def handle_gallery(albums):
+	'''
+	Builds the Jekyll gallery templates from some cheetah templates
+	'''
 	write_gallery_index(albums, albums[''])
 
 	for album in albums:
@@ -34,6 +51,9 @@ def handle_gallery(albums):
 			write_image_page(albums, albums[album]['images'][image])
 
 def write_gallery_index(albums, album_data):
+	'''
+	This generates the gallery index Jekyll template
+	'''
 	if os.path.isfile('templates/album.tpl'):
 		fh = open('templates/album.tpl', 'r')
 		data = fh.read()
@@ -59,6 +79,9 @@ def write_gallery_index(albums, album_data):
 	fh.close()
 
 def write_album_index(albums, album_data):
+	'''
+	This generates a single albums index Jekyll template
+	'''
 	if os.path.isfile('templates/album.tpl'):
 		fh = open('templates/album.tpl', 'r')
 		data = fh.read()
@@ -84,6 +107,9 @@ def write_album_index(albums, album_data):
 	fh.close()
 
 def write_image_page(albums, image_data):
+	'''
+	This generates an images Jekyll template
+	'''
 	if os.path.isfile('templates/image.tpl'):
 		fh = open('templates/image.tpl', 'r')
 		data = fh.read()
@@ -105,6 +131,10 @@ def write_image_page(albums, image_data):
 	fh.close()
 
 def build_gallery():
+	'''
+	This does all the name detection and directory transversal to build a dict
+	of the gallery contents which is then used to actually write the templates
+	'''
 	print "Building gallery"
 	os.chdir('content/assests/gallery/images/')
 	albums = {}
@@ -214,6 +244,9 @@ def build_gallery():
 	handle_gallery(albums)
 
 def build_thumbnails():
+	'''
+	This builds a thumbnail (or video still) for every item in the gallery
+	'''
 	for root, subFolders, files in os.walk('content/assests/gallery/images/'):
 		for f in files:
 			path = os.path.realpath(os.path.join(root, f))
@@ -249,6 +282,9 @@ def build_thumbnails():
 				os.system("ffmpeg -i %s -r 1 -ss 00:00:05 -s 598x370 -an -qscale 1 %s.png" % (path, new_path))
 
 def minify_assets():
+	'''
+	This strips down the css and js using yuicompressor
+	'''
 	for root, subFolders, files in os.walk('_site'):
 		for f in files:
 			path = os.path.realpath(os.path.join(root, f))
@@ -259,23 +295,42 @@ def minify_assets():
 			elif extension.lower() in [".png", ".jpeg", ".jpg"]:
 				os.system("convert -quality 0 %s %s" % (path, path))
 
-def deploy():
-	if not os.path.isdir("_site"):
+def push_site():
+	'''
+	This pushes the live site code to github
+	'''
+	if not os.path.isdir(LIVE_SITE_PATH):
 		print "Bailing from deploy"
 		return False
 
 	print "Pushing to github"
-	os.chdir("_site")
-	os.system("git init")
-	os.system("git add *")
+	os.chdir(LIVE_SITE_PATH)
+	os.system("find . -type f not -path *.git/* -exec git add {} \;")
 	os.system("git commit -am 'Adding latest code'")
-	os.system("git branch live")
-	os.system("git checkout live")
-	os.system("git remote add origin git@github.com:DamianZaremba/7tharochdale.org.uk.git")
-	os.system("git push origin live --force")
-	os.chdir("../")
+	os.system("git push origin live")
+	print "Push done!"
+
+def clone_site():
+	'''
+	This clones the live site code into our live site path
+	'''
+	os.chdir(LIVE_SITE_PATH)
+	os.system("git clone -b live git://github.com/DamianZaremba/7tharochdale.org.uk.git %s" % LIVE_SITE_PATH)
+	os.chdir(TMP_PATH)
+
+def pull_site():
+	'''
+	This pulls any changes into our live site path
+	'''
+	os.chdir(LIVE_SITE_PATH)
+	os.system("git pull")
+	os.chdir(TMP_PATH)
 
 def run_server():
+	'''
+	This runs the dev server
+	Note: misses any minification etc and just does the core functionality stuff
+	'''
 	print "Running server"
 	build_gallery()
 	build_thumbnails()
@@ -284,18 +339,40 @@ def run_server():
 		os.removedirs("_site")
 	os.system("jekyll --auto --server")
 
+def dev_to_live():
+	'''
+	This copies the code out of the _site folder into our live site path
+	We don't transform into the live site path directory to stop Jekyll doing
+	anything insane. Also rsync does a nice job of tidying.
+	'''
+	os.system("rsync -vr --delete %s %s" % (TMP_DIR, LIVE_SITE_DIR))
+
 def run_deploy():
+	'''
+	Runs a deployment to github
+	Doesn't actually deploy the site but pushes the code into the live repo
+	'''
 	print "Running deploy"
 	if os.path.isdir("_site"):
 		os.removedirs("_site")
 
+	if not os.path.isdir(LIVE_SITE_PATH):
+		os.mkdir(LIVE_SITE_PATH)
+		clone_site()
+
+	pull_site()
 	build_gallery()
 	build_thumbnails()
 	minify_assets()
 	compile_site()
-	deploy()
+	dev_to_live()
+	push_site()
 
 def create_post(post_title):
+	'''
+	This creates a post with the correct name (the date)
+	Much nicer to humans due to the way Jekyll handles dates
+	'''
 	name = "%s-%s.markdown" % (time.strftime("%Y-%m-%d"), post_title)
 	file_path = os.path.join('content', '_posts', name.lower())
 
@@ -317,6 +394,9 @@ def create_post(post_title):
 	fh.close()
 
 if __name__ == "__main__":
+	'''
+	This just detects what options we have been give and determins what to do
+	'''
 	parser = argparse.ArgumentParser(description='Run commands related to deploying 7tharochdale.org.uk')
 	parser.add_argument('-d', '--deploy', action='store_true', help='Run the deploy steps')
 	parser.add_argument('-n', '--new', action='store', dest='new', help='Create a new post')
@@ -324,12 +404,12 @@ if __name__ == "__main__":
 	base_dir = os.path.dirname(os.path.realpath(__file__))
 	args = parser.parse_args()
 	if args.deploy == True:
-		tmp_dir = setup(base_dir)
+		TMP_DIR = setup(base_dir)
 		run_deploy()
-		cleanup(tmp_dir)
+		cleanup(TMP_DIR)
 	elif args.new:
 		create_post(args.new)
 	else:
-		tmp_dir = setup(base_dir)
+		TMP_DIR = setup(base_dir)
 		run_server()
-		cleanup(tmp_dir)
+		cleanup(TMP_DIR)
