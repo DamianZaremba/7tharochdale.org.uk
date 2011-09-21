@@ -1,156 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/</loc>
-		<lastmod>2011-08-06T10:35:32+01:00</lastmod>
+		<loc>http://127.0.0.1:4039/</loc>
+		<lastmod>2011-09-21T10:56:36+01:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/scouts.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/scouts.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/news.atom</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/news.atom</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/leaders.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/leaders.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/gallery.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/gallery.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/faq.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/faq.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/explorers.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/explorers.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/cubs.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/cubs.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/contact.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/contact.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/beavers.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/beavers.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/about.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/about.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/news/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/news/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/news/categories.html</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/news/categories.html</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk/news/archives/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039/news/archives/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk//2002/06/28/pack_holiday/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039//2002/06/28/pack_holiday/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk//2001/10/04/halloween/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039//2001/10/04/halloween/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk//2001/06/04/ice_skating/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039//2001/06/04/ice_skating/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk//2001/06/04/activity_weekend/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039//2001/06/04/activity_weekend/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk//2001/06/02/annual_camp/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039//2001/06/02/annual_camp/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk//2001/05/04/agm_report/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039//2001/05/04/agm_report/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	
 	<url>
-		<loc>http://7tharochdale.dev.nodehost.co.uk//2000/07/11/agm_report/</loc>
-		<lastmod>Sat Aug 06 10:35:32 +0100 2011</lastmod>
+		<loc>http://127.0.0.1:4039//2000/07/11/agm_report/</loc>
+		<lastmod>2011-09-21 10:56:36 +0100</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
