@@ -24,6 +24,7 @@ $albums[$album]['name']"
 
 	#if $i == 4:
 	</tr><tr>
+	#set $i = 0
 	#end if
 	#set $i += 1
 
@@ -71,6 +72,7 @@ $albums[$album]['name']"
 
 	#if $i == 6:
 	</tr><tr>
+	#set $i = 0
 	#end if
 
 	#set $i += 1
