@@ -1,7 +1,7 @@
 ---
 layout: master
 ---
-<p><a href="{{ site.basedomain }}/news/categories">Categories</a> | <a href="{{ site.basedomain }}/news/">News</a></p>
+<p><a href="{{ site.basedomain }}/news/categories/">Categories</a> | <a href="{{ site.basedomain }}/news/">News</a></p>
 <div class="post">
 	<div class="post-date">Posted by {{ page.author }} on {{ page.date | date_to_string }}</div>
 	{{ content }}
@@ -22,7 +22,7 @@ layout: master
 	    dsq.type = 'text/javascript';
 	    dsq.async = true;
 	    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	    
+
 	    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
