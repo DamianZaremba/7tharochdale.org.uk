@@ -59,8 +59,6 @@ def handle_gallery(albums):
 	'''
 	Builds the Jekyll gallery templates from some cheetah templates
 	'''
-	import pprint
-	pprint.pprint(albums);
 	for album in albums:
 		write_album_index(albums, album)
 
