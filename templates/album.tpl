@@ -25,8 +25,9 @@ $albums[$album]['name']"
 	#if $i == 4:
 	</tr><tr>
 	#set $i = 0
-	#end if
+	#else
 	#set $i += 1
+	#end if
 
     #end for
     </tr>
@@ -73,9 +74,10 @@ $albums[$album]['name']"
 	#if $i == 6:
 	</tr><tr>
 	#set $i = 0
+	#else
+	#set $i += 1
 	#end if
 
-	#set $i += 1
     #end for
     </tr>
     </table>
