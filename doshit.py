@@ -59,45 +59,17 @@ def handle_gallery(albums):
 	'''
 	Builds the Jekyll gallery templates from some cheetah templates
 	'''
-	write_gallery_index(albums, albums[''])
-
+	import pprint
+	pprint.pprint(albums);
 	for album in albums:
-		write_album_index(albums, albums[album])
+		write_album_index(albums, album)
 
 		for image in albums[album]['images']:
-			write_image_page(albums, albums[album]['images'][image])
+			write_image_page(albums, album, image)
 
-def write_gallery_index(albums, album_data):
+def write_album_index(albums, album):
 	'''
-	This generates the gallery index Jekyll template
-	'''
-	if os.path.isfile('templates/album.tpl'):
-		fh = open('templates/album.tpl', 'r')
-		data = fh.read()
-		fh.close()
-	else:
-		data = ''
-
-	tdata = {
-		'albums': albums,
-		'album': album_data,
-	}
-	template = Template(data, tdata)
-	album_path = os.path.realpath(os.path.join('content', 'gallery.html'))
-	album_dir = os.path.realpath(os.path.join('content', 'gallery'))
-
-	if not os.path.isdir(album_dir):
-		print "Creating '%s'" % album_dir
-		os.makedirs(album_dir)
-
-	print "Writing out '%s'" % album_path
-	fh = open(album_path, 'w')
-	fh.write(str(template))
-	fh.close()
-
-def write_album_index(albums, album_data):
-	'''
-	This generates a single albums index Jekyll template
+	This generates a single album's index template for Jekyll
 	'''
 	if os.path.isfile('templates/album.tpl'):
 		fh = open('templates/album.tpl', 'r')
@@ -108,11 +80,11 @@ def write_album_index(albums, album_data):
 
 	tdata = {
 		'albums': albums,
-		'album': album_data,
+		'album': album,
 	}
 	template = Template(data, tdata)
-	album_path = os.path.realpath(os.path.join('content', 'gallery', album_data['path'] + '.html'))
-	album_dir = os.path.realpath(os.path.join('content', 'gallery', album_data['path']))
+	album_path = os.path.realpath(os.path.join('content', 'gallery', album, 'index.html'))
+	album_dir = os.path.realpath(os.path.join('content', 'gallery', album))
 
 	if not os.path.isdir(album_dir):
 		print "Creating '%s'" % album_dir
@@ -123,7 +95,7 @@ def write_album_index(albums, album_data):
 	fh.write(str(template))
 	fh.close()
 
-def write_image_page(albums, image_data):
+def write_image_page(albums, album, image):
 	'''
 	This generates an images Jekyll template
 	'''
@@ -136,11 +108,12 @@ def write_image_page(albums, image_data):
 
 	tdata = {
 		'albums': albums,
-		'image': image_data,
+		'album': album,
+		'image': image,
 	}
 	template = Template(data, tdata)
 
-	image_path = os.path.realpath(os.path.join('content', 'gallery', image_data['album'], image_data['name'] + '.html'))
+	image_path = os.path.realpath(os.path.join('content', 'gallery', image + '.html'))
 	print "Writing out '%s'" % image_path
 
 	fh = open(image_path, 'w')
@@ -156,108 +129,99 @@ def build_gallery():
 	os.chdir('content/assests/gallery/images/')
 	albums = {}
 
-	albums[""] = {}
-	albums[""]["images"] = {}
-	albums[""]["name"] = ""
-	albums[""]["path"] = ''
-	albums[""]["sub_albums"] = []
-	albums[""]["url"] = '{{ site.basedomain }}/assests/gallery'
-
 	for root, subFolders, files in os.walk('.'):
 		for folder in subFolders:
-			album_dir = os.path.join(root, folder)
-			if album_dir[0:2] == "./": album_dir = album_dir[2:]
-			if album_dir[0:1] == ".": album_dir = album_dir[1:]
+			# Figure out our relative dirs
+			album_dir = os.path.join(root, folder)[2:]
+			parent_album_dir = '/'.join(album_dir.split('/')[:-1])
 
-			parent_album_dir = os.path.relpath(os.path.join(album_dir, ".."))
-			if parent_album_dir[0:2] == "./": parent_album_dir = parent_album_dir[2:]
-			if parent_album_dir[0:1] == ".": parent_album_dir = parent_album_dir[1:]
-
-			album_name_file = os.path.realpath(os.path.join(album_dir, 'ALBUM_DESCRIPTION'))
-			if os.path.isfile(album_name_file):
-				fh = open(album_name_file, 'r')
-				album_name = fh.read()
-				fh.close()
-			else:
-				album_name = album_dir.split('/')[-1].replace('_', ' ')
-
-			parent_album_name_file = os.path.realpath(os.path.join(album_dir, 'ALBUM_DESCRIPTION'))
-			if os.path.isfile(parent_album_name_file):
-				fh = open(parent_album_name_file, 'r')
-				parent_album_name = fh.read()
-				fh.close()
-			elif parent_album_dir == "":
-				parent_album_name = "Gallery"
-			else:
-				parts = parent_album_dir.split('/')
-				parent_album_name = parts[-1].replace('_', ' ')
-
+			# Add the parent album dir to the albums if it doesn't exist
 			if parent_album_dir not in albums:
-				albums[parent_album_dir] = {}
-				albums[parent_album_dir]["images"] = {}
-				albums[parent_album_dir]["sub_albums"] = []
-			albums[parent_album_dir]["sub_albums"].append(album_dir)
+					albums[parent_album_dir] = {
+						"sub_albums": [], "images": {},
+						"name": "Home", "parent_albums": [],
+						"path": "", "parent_path": "",
+					}
 
+			# Add the album to the parent album's entry
+			# only do this if they are different
+			if album_dir != parent_album_dir:
+				# Just in case...f
+				if album_dir not in albums[parent_album_dir]["sub_albums"]:
+					albums[parent_album_dir]["sub_albums"].append(album_dir)
+
+			# Add the album to the albums if it doesn't exist
 			if album_dir not in albums:
-				albums[album_dir] = {}
-				albums[album_dir]["images"] = {}
-				albums[album_dir]["sub_albums"] = []
+				albums[album_dir] = {"sub_albums": [], "images": {}}
 
-			albums[album_dir]["name"] = album_name.strip()
-			albums[album_dir]["path"] = album_dir
-			albums[album_dir]["url"] = '{{ site.basedomain }}/gallery/%s' % album_dir
-			albums[album_dir]["parent"] = parent_album_name.strip()
-			albums[album_dir]["parent_url"] = '{{ site.basedomain }}/gallery/%s' % parent_album_dir
+			# Check if we need to figure out the name
+			if "name" not in albums[album_dir]:
+				# Check if there is an explicit name file
+				album_name_file = os.path.realpath(os.path.join(album_dir, 'ALBUM_DESCRIPTION'))
+				if os.path.isfile(album_name_file):
+					fh = open(album_name_file, 'r')
+					album_name = fh.read()
+					fh.close()
+				else:
+					# Use magical guess work
+					album_name = album_dir.split('/')[-1].replace('_', ' ')
 
+				albums[album_dir]["name"] = album_name.strip()
+
+			if "parent_path" not in albums[album_dir]:
+				albums[album_dir]["parent_path"] = parent_album_dir
+
+			if "parent_albums" not in albums[album_dir]:
+				albums[album_dir]["parent_albums"] = []
+				parts = parent_album_dir.split('/')
+				for i in range(1, len(parts)+1):
+					p = '/'.join(parts[0:i])
+					if p.strip() != "":
+						albums[album_dir]["parent_albums"].append(p)
+
+		# Add all the image files to the gallery
 		for f in files:
-			real_path = os.path.join(root, f)
-			basename, extension = os.path.splitext(real_path)
+			# Get the real path + ext - this is used for generating the thumbs
+			album_dir = root[2:]
+			image_path = os.path.join(album_dir, f)
+			basename, extension = os.path.splitext(image_path)
+			print album_dir
+			print image_path
 
+			# Figure out if we can support the format
 			if extension.lower() in [".png", ".jpeg", ".jpg"]:
-				album_dir = os.path.dirname(real_path)
-				if album_dir[0:2] == "./": album_dir = album_dir[2:]
-				if album_dir[0:1] == ".": album_dir = album_dir[1:]
-
-				image_description = ''
+				# We fill this stuff in
+				image_description = f
 				image_author = 'Unknown'
 
-				desc_path = os.path.realpath(os.path.join(real_path, '-DESCRIPTION'))
-				if os.path.isfile(desc_path):
-					fh = open(desc_path, 'r')
-					image_description = fh.read()
-					fh.close()
+				# Check if we even need to bother getting this image info
+				if image_path not in albums[album_dir]["images"]:
+					# Try and get the description file
+					desc_path = os.path.realpath(os.path.join(image_path, '-DESCRIPTION'))
+					if os.path.isfile(desc_path):
+						fh = open(desc_path, 'r')
+						image_description = fh.read()
+						fh.close()
+					else:
+						# Try and get the EXIF comment
+						try:
+							image = pyexif.ExifEditor(real_path)
+							image_description = image.getTag('Comment')
+						except:
+							pass
 
-				if image_description == '':
-					try:
-						image = pyexif.ExifEditor(real_path)
-						image_description = image.getTag('Comment')
-					except:
-						pass
-
-				author_path = os.path.realpath(os.path.join(real_path, '-AUTHOR'))
-				if os.path.isfile(author_path):
-					fh = open(author_path, 'r')
-					image_author = fh.read()
-					fh.close()
-
-				image_path = real_path
-				if image_path[0:2] == "./": image_path = image_path[2:]
-
-				if album_dir not in albums:
-					albums[album_dir] = {}
-					albums[album_dir]["images"] = {}
-					albums[album_dir]["sub_albums"] = []
+					# Try and read the authors file
+					author_path = os.path.realpath(os.path.join(image_path, '-AUTHOR'))
+					if os.path.isfile(author_path):
+						fh = open(author_path, 'r')
+						image_author = fh.read()
+						fh.close()
 
 				albums[album_dir]["images"][image_path] = {}
-				albums[album_dir]["images"][image_path]["album"] = album_dir
 				albums[album_dir]["images"][image_path]["author"] = image_author
-				albums[album_dir]["images"][image_path]["url"] = '{{ site.basedomain }}/gallery/%s' % image_path
-				albums[album_dir]["images"][image_path]["image_url"] = '{{ site.basedomain }}/assests/gallery/images/%s' % image_path
-				albums[album_dir]["images"][image_path]["thumbnail_url"] = '{{ site.basedomain }}/assests/gallery/image_thumbnails/%s' % image_path
-				albums[album_dir]["images"][image_path]["desc"] = image_description
-				albums[album_dir]["images"][image_path]["name"] = os.path.basename(real_path)
+				albums[album_dir]["images"][image_path]["description"] = image_description
 
-	os.chdir('../../../../')
+	os.chdir(TMP_DIR)
 	handle_gallery(albums)
 
 def build_thumbnails():

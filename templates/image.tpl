@@ -1,14 +1,24 @@
 ---
 layout: master
-title: "Gallery - #if $albums[$image['album']]['name'] != '' then $albums[$image['album']]['name'] else '' #
- #if $image['desc'] and $image['desc'] != '' then ' - ' + $image['desc'] else '' #
+title: "Gallery -> #if len($albums[$album]['parent_albums']) > 0
+	#for $a in $albums[$album]['parent_albums']
+		$a ->
+	#end for
+	#end if
+	$albums[$album]['name'] -> $albums[$album]['images'][$image]['description']"
 ---
 
 <div class="gallery_single">
-<img src="$image['image_url']" alt="$image['desc']" />
-<p class="description">Description: $image['desc']</p>
-<p class="author">Author: $image['author']</p>
-<p class="linkback">Back to <a href="$albums[$image['album']]['url']">$albums[$image['album']]['name']</a></p>
+<img src="{{ site.basedomain }}/assests/gallery/images/$image" alt="$albums[$album]["images"][$image]['description']" />
+<p class="description">Description: $albums[$album]["images"][$image]['description']</p>
+<p class="author">Author: $albums[$album]["images"][$image]['author']</p>
+<p class="linkback">Back to <a href="{{ site.basedomain }}/gallery/$album">Gallery ->
+#if len($albums[$album]['parent_albums']) > 0
+	#for $a in $albums[$album]['parent_albums']
+		$a ->
+	#end for
+#end if
+$albums[$album]['name']</a></p>
 </div>
 
 <div id="comments">

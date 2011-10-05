@@ -1,20 +1,25 @@
 ---
 layout: master
-title: "Gallery - #if $album['name'] != '' then $album['name'] else 'home' #"
+title: "Gallery -> #if len($albums[$album]['parent_albums']) > 0
+	#for $a in $albums[$album]['parent_albums']
+		$a ->
+	#end for
+	#end if
+$albums[$album]['name']"
 ---
 
-#if ('images' in $album and len($album['images']) > 0) or ('sub_albums' in $album and len($album['sub_albums']) > 0):
-#if len($album['images']) > 0:
+#if (len($albums[$album]['images']) > 0) or (len($albums[$album]['sub_albums']) > 0):
+#if len($albums[$album]['images']) > 0:
 <div class="gallery_album_images">
     <table>
     <tr>
     #set $i = 0
 
-	#for $image in $album['images']
+	#for $image in $albums[$album]['images']
 	<td>
-	<a href="$album['images'][$image]['url']">
-	<img src="$album['images'][$image]['thumbnail_url']" alt="$album['images'][$image]['name']" /></a>
-	<p>$album['images'][$image]['desc']</p>
+	<a href="{{ site.basedomain }}/gallery/$image">
+	<img src="{{ site.basedomain }}/assests/gallery/image_thumbnails/$image" alt="$albums[$album]['images'][$image]['description']" /></a>
+	<p>$albums[$album]['images'][$image]['description']</p>
 	</td>
 
 	#if $i == 4:
@@ -25,20 +30,24 @@ title: "Gallery - #if $album['name'] != '' then $album['name'] else 'home' #"
     #end for
     </tr>
     </table>
-    #if 'parent' in $album and 'parent_url' in $album:
-	<p class="linkback">Back to <a href="$album['parent_url']">$album['parent']</a></p>
+	<p class="linkback">Back to <a href="{{ site.basedomain }}/gallery/$albums[$album]['parent_path']">Gallery ->
+	#if len($albums[$albums[$album]['parent_path']]['parent_albums']) > 0
+		#for $a in $albums[$albums[$album]['parent_path']]['parent_albums']
+			$a ->
+		#end for
 	#end if
+	$albums[$albums[$album]['parent_path']]['name']</a></p>
 </div>
 #end if
 
-#if 'sub_albums' in $album and len($album['sub_albums']) > 0:
+#if len($albums[$album]['sub_albums']) > 0:
 <div class="gallery_album_subalbums">
-    <h3>Albums</h3>
+    <h3>Sub Albums</h3>
     <table>
     <tr>
     #set $i = 0
 
-	#for $album in $album['sub_albums']
+	#for $album in $albums[$album]['sub_albums']
 	<td>
 	#set $image_keys = $albums[$album]['images'].keys()
 	#if len($image_keys) > 0:
@@ -48,11 +57,14 @@ title: "Gallery - #if $album['name'] != '' then $album['name'] else 'home' #"
 	#end if
 
 	#if $image_path:
-		#set $image = $albums[$album]['images'][$image_path]
-		<a href="$albums[$album]['url']" title="Gallery - $albums[$album]['url']"><img src="$image['thumbnail_url']" alt="$albums[$album]['name']" /></a>
+		<a href="{{ site.basedomain }}/gallery/$album" title="Gallery - $albums[$album]['name']">
+			<img src="{{ site.basedomain }}/assests/gallery/image_thumbnails/$image_path" alt="Gallery - $albums[$album]['name']" />
+		</a>
 		<p>$albums[$album]['name']</p>
 	#else
-		<a href="$albums[$album]['url']" title="Gallery - $albums[$album]['url']"><img src="{{ site.basedomain }}/assests/gallery/missing_image.png" alt="$albums[$album]['name']" /></a>
+		<a href="{{ site.basedomain }}/gallery/$album" title="Gallery - $albums[$album]['name']">
+			<img src="{{ site.basedomain }}/assests/gallery/missing_image.png" alt="Gallery - $albums[$album]['name']" />
+		</a>
 		<p>$albums[$album]['name']</p>
 	#end if
 	</td>
