@@ -23,13 +23,12 @@ Blog
 ------
 To add stuff into the _posts folder, use ./doshit.py --new <title> so the created file is correctly formatted.
 Once the file is added you may edit it as usual, the only required part is the header is as follows:
-`---
-layout: post
-title: <new post title>
-author: <authors name>
-tags: <list of post tags>
----`
-The head is YAML formatted.
+    layout: post
+    title: <new post title>
+    author: <authors name>
+    tags: <list of post tags>
+
+The header is YAML formatted.
 
 Gallery
 -------
