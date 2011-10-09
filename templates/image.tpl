@@ -1,11 +1,11 @@
 ---
 layout: master
-title: "Gallery -> #if len($albums[$album]['parent_albums']) > 0
+title: "Gallery ->#if len($albums[$album]['parent_albums']) > 0
 	#for $a in $albums[$album]['parent_albums']
-		$a ->
+ $albums[$a]['name'] ->
 	#end for
 	#end if
-	$albums[$album]['name'] -> $albums[$album]['images'][$image]['description']"
+$albums[$album]['name'] -> $albums[$album]['images'][$image]['description']"
 ---
 
 <div class="gallery_single">
@@ -15,7 +15,7 @@ title: "Gallery -> #if len($albums[$album]['parent_albums']) > 0
 <p class="linkback">Back to <a href="{{ site.basedomain }}/gallery/$album">Gallery ->
 #if len($albums[$album]['parent_albums']) > 0
 	#for $a in $albums[$album]['parent_albums']
-		$a ->
+		$albums[$a]['name'] ->
 	#end for
 #end if
 $albums[$album]['name']</a></p>

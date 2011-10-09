@@ -1,8 +1,8 @@
 ---
 layout: master
-title: "Gallery -> #if len($albums[$album]['parent_albums']) > 0
+title: "Gallery ->#if len($albums[$album]['parent_albums']) > 0
 	#for $a in $albums[$album]['parent_albums']
-		$a ->
+ $albums[$a]['name'] ->
 	#end for
 	#end if
 $albums[$album]['name']"
@@ -35,7 +35,7 @@ $albums[$album]['name']"
 	<p class="linkback">Back to <a href="{{ site.basedomain }}/gallery/$albums[$album]['parent_path']">Gallery ->
 	#if len($albums[$albums[$album]['parent_path']]['parent_albums']) > 0
 		#for $a in $albums[$albums[$album]['parent_path']]['parent_albums']
-			$a ->
+			$albums[$a]['name'] ->
 		#end for
 	#end if
 	$albums[$albums[$album]['parent_path']]['name']</a></p>

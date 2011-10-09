@@ -172,10 +172,16 @@ def build_gallery():
 			if "parent_albums" not in albums[album_dir]:
 				albums[album_dir]["parent_albums"] = []
 				parts = parent_album_dir.split('/')
-				for i in range(1, len(parts)+1):
-					p = '/'.join(parts[0:i])
-					if p.strip() != "":
+				i = len(parts)
+				while i > 0:
+					p = '/'.join(parts[:-i]).strip()
+					print p
+					if p != "":
 						albums[album_dir]["parent_albums"].append(p)
+					i -= 1
+
+				if parent_album_dir != "":
+					albums[album_dir]["parent_albums"].append(parent_album_dir)
 
 		# Add all the image files to the gallery
 		for f in files:
@@ -183,8 +189,6 @@ def build_gallery():
 			album_dir = root[2:]
 			image_path = os.path.join(album_dir, f)
 			basename, extension = os.path.splitext(image_path)
-			print album_dir
-			print image_path
 
 			# Figure out if we can support the format
 			if extension.lower() in [".png", ".jpeg", ".jpg"]:
