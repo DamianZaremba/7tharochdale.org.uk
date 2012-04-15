@@ -11,7 +11,7 @@ layout: nil
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/scouts.html</loc>
+		<loc>{{ site.basedomain }}/scouts/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
@@ -25,7 +25,7 @@ layout: nil
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/leaders.html</loc>
+		<loc>{{ site.basedomain }}/leaders/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
@@ -39,49 +39,49 @@ layout: nil
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/gallery.html</loc>
+		<loc>{{ site.basedomain }}/gallery/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/faq.html</loc>
+		<loc>{{ site.basedomain }}/faq/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/explorers.html</loc>
+		<loc>{{ site.basedomain }}/explorers/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/cubs.html</loc>
+		<loc>{{ site.basedomain }}/cubs/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/contact.html</loc>
+		<loc>{{ site.basedomain }}/contact/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/beavers.html</loc>
+		<loc>{{ site.basedomain }}/beavers/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/about.html</loc>
+		<loc>{{ site.basedomain }}/about/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
@@ -95,7 +95,7 @@ layout: nil
 	</url>
 
 	<url>
-		<loc>{{ site.basedomain }}/news/categories.html</loc>
+		<loc>{{ site.basedomain }}/news/categories/</loc>
 		<lastmod>{{ site.time }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>

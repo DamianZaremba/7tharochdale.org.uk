@@ -1,17 +1,20 @@
 ---
-layout: master
+layout: news
 title: News Categories
 ---
-<p><a href="{{ site.basedomain }}/news/categories/">Categories</a> | <a href="{{ site.basedomain }}/news/">News</a></p>
-{% for category in site.categories %}
-<div id="post">
-<h5>{{ category | first }}</h5>
-{% for posts in category %}
-<p>
-{% for post in posts %}
-<a href="{{ post.url }}">{{ post.title }}</a>
-{% endfor %}
-</p>
-{% endfor %}
-</div>
-{% endfor %}
+{% if site.categories %}
+	{% for category in site.categories %}
+	<div id="post">
+		<h5>{{ category | first }}</h5>
+		{% for posts in category %}
+		<p>
+			{% for post in posts %}
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			{% endfor %}
+		</p>
+		{% endfor %}
+	</div>
+	{% endfor %}
+{% else %}
+	<p>No categories have been created yet.</p>
+{% endif %}

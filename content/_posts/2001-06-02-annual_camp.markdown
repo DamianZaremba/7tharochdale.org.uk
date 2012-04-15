@@ -2,6 +2,7 @@
 layout: post
 title: Annual Camp 2001
 author: Mike
+author_url: gsl
 tags: "Annual Camp"
 ---
 

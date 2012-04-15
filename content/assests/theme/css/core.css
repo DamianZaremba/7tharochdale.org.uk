@@ -9,6 +9,14 @@ body {
 	background-color: #F8F8F8;
 }
 
+p.right {
+	float: right;
+}
+
+p.left {
+	float: left;
+}
+
 /* Menu style stuff */
 #menu {
 	width: 900px;
@@ -170,7 +178,7 @@ body {
 /* Right content style stuff */
 div#right_content {
 	float: left;
-	width: 746px;
+	width: 776px;
 	overflow: hidden;
 }
 
@@ -299,12 +307,13 @@ div#leaders_info div img {
 	display: inline;
 }
 
-ul.leaders li h3 {
-	padding-top: 2px;
+div#leaders_list h3 {
+	margin-top: 5px;
 }
 
-ul.leaders li ul {
+div#leaders_list ul li {
 	margin-left: 10px;
+	margin-bottom: 5px;
 }
 
 /* Section pages style stuff */
@@ -376,13 +385,30 @@ div.gallery_album_images p.linkback {
 /* Section menu style stuff */
 div#left_menu {
 	float: left;
-	width: 150px;
+	width: 110px;
+	margin-right: 10px;
 	overflow: hidden;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #D8D8D8;
 }
 
 div#left_menu ul li {
 	margin-left: 10px;
 	margin-bottom: 5px;
+}
+
+/* News menu style stuff */
+div#news_menu {
+	width: 900px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+div#news_menu span {
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 /* Video player stuff */
@@ -422,8 +448,8 @@ div.gallery_video a.videoPlayer img{
 div.post {
 	border: 1px dotted #000000;
 	padding: 5px;
-	margin-bottom: 5px;
-	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 div.post-date {
@@ -470,6 +496,10 @@ a:hover {
 h3, h4, h5, h6 {
 	margin-bottom: 2px;
 	margin-top: 5px;
+}
+
+h5 {
+	font-size: 12px;
 }
 
 .hidden {

@@ -1,15 +1,19 @@
 ---
-layout: master
+layout: news
 title: News
 ---
-
-<p><a href="{{ site.basedomain }}/news/categories/">Categories</a> | <a href="{{ site.basedomain }}/news/live/">Live news</a></p>
-<p>Put some subscribe widget here linking to /news/feed.atom</p>
-
+{% if site.posts %}
 {% for post in site.posts %}
 <div class="post">
 	<div class="post-title"><h3><a href="{{ post.url }}">{{ post.title }}</a></h3></div>
-	<div class="post-date">{{ post.date | date_to_string }}</div>
-	<div class="post-content">{{ post.content | strip_html | truncatewords: 35 }} [..] <a href="{{ post.url }}">Read more</a></div>
+	<div class="post-date"><p>{{ post.date | date_to_string }}</p></div>
+	<div class="post-content">
+		<p>{{ post.content | strip_html | truncatewords: 35 }} [..]</p>
+		<p class="right"><a href="{{ post.url }}">Read more</a></p>
+	</div>
+	<div class="blocker"></div> <!-- p.right is a float so make sure it stays in the post div -->
 </div>
 {% endfor %}
+{% else %}
+<p>There are no news articles available yet, please check back later.</p>
+{% endif %}

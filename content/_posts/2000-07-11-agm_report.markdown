@@ -2,6 +2,7 @@
 layout: post
 title: 2000 Group Annual General Meeting Report
 author: Mike
+author_url: gsl
 tags: AGM
 ---
 

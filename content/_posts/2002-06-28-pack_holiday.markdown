@@ -2,6 +2,7 @@
 layout: post
 title: Harry Potter Weekend (Pack Holiday 2002).
 author: Young Leader Allyson Phillips (Hedwig)
+author_url: narla
 tags: "Pack Holiday"
 ---
 
