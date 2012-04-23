@@ -4,15 +4,75 @@ title: Live news
 ---
 <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 
-<p>Feel free to follow us on twitter using the links below.</p>
+<!-- UK Scouting twitter feed -->
+<div class="tweet_block">
+	<script type="text/javascript">
+		new TWTR.Widget({
+			version: 2,
+			type: "profile",
+			rpp: 10,
+			interval: 6000,
+			width: 250,
+			height: 300,
+			features: {
+				scrollbar: true,
+				loop: true,
+				live: true,
+				hashtags: true,
+				timestamp: true,
+				avatars: true,
+				behavior: "all"
+			}
+		}).render().setUser("UKScouting").start();
+	</script>
+</div>
 
 <!-- 7th A Rochdale twitter feed -->
 <div class="tweet_block">
-	{% twitter_feed 7tha_rochdale %}
+	<script type="text/javascript">
+		new TWTR.Widget({
+			version: 2,
+			type: "profile",
+			rpp: 10,
+			interval: 6000,
+			width: 250,
+			height: 300,
+			features: {
+				scrollbar: true,
+				loop: true,
+				live: true,
+				hashtags: true,
+				timestamp: true,
+				avatars: true,
+				behavior: "all"
+			}
+		}).render().setUser("7tha_rochdale").start();
+	</script>
 </div>
 
-<!-- UK Scouting twitter feed -->
+<!-- iscout twitter feed -->
 <div class="tweet_block">
-	{% twitter_feed UKScouting %}
+	<script type="text/javascript">
+		new TWTR.Widget({
+			version: 2,
+			type: "search",
+			search: "#iscout",
+			title: "#iScout",
+			subject: "iScout twitter feed",
+			rpp: 10,
+			interval: 6000,
+			width: 250,
+			height: 300,
+			features: {
+				scrollbar: true,
+				loop: true,
+				live: true,
+				hashtags: true,
+				timestamp: true,
+				avatars: true,
+				behavior: "all"
+			}
+		}).render().start();
+	</script>
 </div>
 <div class="blocker"></div>
