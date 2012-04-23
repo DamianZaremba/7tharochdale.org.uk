@@ -181,6 +181,8 @@ div#right_content {
 	float: left;
 	width: 776px;
 	overflow: hidden;
+	border-left-width: 1px;
+	border-left-color: #F0F0F0;
 }
 
 #main_content h2 {
