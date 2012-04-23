@@ -74,7 +74,7 @@
 	</script>
 
 	<!--
-	Site rendered at:  Wed Oct 05 13:11:40 +0100 2011 by Jekyll.
+	Site rendered at:  2012-04-23 23:03:05 +0100 by Jekyll.
 
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	- Thanks goes to:                                                           -
@@ -83,8 +83,9 @@
 	-  * The authors of jQuery for making javascript easy.                      -
 	-  * Eric for his awesome css reset hack.                                   -
 	-  * Dean Edwards for his awesome javascript fix IE project                 -
-	-  * Luke Carrier for some js & css fixes.                                  -
+	-  * Luke Carrier for some JS & CSS fixes.                                  -
 	-  * Barry Carlyon for his help with z-index on the css hover stuff.        -
+	-  * Everyone who contributed ideas and help to the project                 -
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 	RIPA NOTICE: No consent is given for the interception of this page transmission
@@ -161,12 +162,6 @@
 						src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/menu/section_scouts.gif" alt="Scouts" />
 					</a>
 				</li>
-				<li>
-					<a href="http://7tharochdale.dev.nodehost.co.uk/explorers/" title="Explorer Scouts">
-						<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
-						src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/menu/section_explorers.gif" alt="Explorers" />
-					</a>
-				</li>
 			</ul>
 		</li>
 		<li>
@@ -192,40 +187,70 @@
 	<div id="content_holder">
 		<div id="main_content">
 			<h2>News</h2>
-			<p><a href="http://7tharochdale.dev.nodehost.co.uk/news/categories/">Categories</a> | <a href="http://7tharochdale.dev.nodehost.co.uk/news/live/">Live news</a></p>
-<p>Put some subscribe widget here linking to /news/feed.atom</p>
+			<div id="news_menu">
+	<span>
+		<img alt="" src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/news_updates.png" />
+		<a href="http://7tharochdale.dev.nodehost.co.uk/news/">News feed</a>
+	</span>
+	<span>
+		<img alt="" src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/news_live.png" />
+		<a href="http://7tharochdale.dev.nodehost.co.uk/news/live/">Social feeds</a>
+	</span>
+	<span>
+		<img alt="" src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/atomfeed_add.png" />
+		<a href="http://7tharochdale.dev.nodehost.co.uk/news/feed.rss">RSS Feed</a>
+	</span>
+</div>
+
 
 
 <div class="post">
 	<div class="post-title"><h3><a href="/2002/06/28/pack_holiday/">Harry Potter Weekend (Pack Holiday 2002).</a></h3></div>
-	<div class="post-date">28 Jun 2002</div>
-	<div class="post-content">June 28th, saw 7th A Rochdale Cub Scouts going off to Bowley campsite for the weekend. They stayed in the Lodge with pitched some tents outside. The theme for the Weekend was the tales of... [..] <a href="/2002/06/28/pack_holiday/">Read more</a></div>
+	<div class="post-date"><p>28 Jun 2002</p></div>
+	<div class="post-content">
+		<p>June 28th, saw 7th A Rochdale Cub Scouts going off to Bowley campsite for the weekend. They stayed in the Lodge with pitched some tents outside. The theme for the Weekend was the tales of... [..]</p>
+		<p class="right"><a href="/2002/06/28/pack_holiday/">Read more</a></p>
+	</div>
+	<div class="blocker"></div> <!-- p.right is a float so make sure it stays in the post div -->
 </div>
 
 <div class="post">
 	<div class="post-title"><h3><a href="/2001/10/04/halloween/">2001 Halloween</a></h3></div>
-	<div class="post-date">04 Oct 2001</div>
-	<div class="post-content">All three of our sections celebrated Halloween in 2001. The Beavers held a party, &amp; later on went to see "Harry Potter" at the cinema. The Cubs made skeletons &amp; monsters, whilst the Scouts Bobbed... [..] <a href="/2001/10/04/halloween/">Read more</a></div>
+	<div class="post-date"><p>04 Oct 2001</p></div>
+	<div class="post-content">
+		<p>All three of our sections celebrated Halloween in 2001. The Beavers held a party, &amp; later on went to see "Harry Potter" at the cinema. The Cubs made skeletons &amp; monsters, whilst the Scouts Bobbed... [..]</p>
+		<p class="right"><a href="/2001/10/04/halloween/">Read more</a></p>
+	</div>
+	<div class="blocker"></div> <!-- p.right is a float so make sure it stays in the post div -->
 </div>
 
 <div class="post">
 	<div class="post-title"><h3><a href="/2001/06/04/ice_skating/">Ice Skating</a></h3></div>
-	<div class="post-date">04 Jun 2001</div>
-	<div class="post-content">The Scouts have recently been ice-skating again, at Blackburn Arena, on or last meeting before the Easter break.
+	<div class="post-date"><p>04 Jun 2001</p></div>
+	<div class="post-content">
+		<p>The Scouts have recently been ice-skating again, at Blackburn Arena, on or last meeting before the Easter break.
 No one did a back flip onto a bum this time!
- [..] <a href="/2001/06/04/ice_skating/">Read more</a></div>
+ [..]</p>
+		<p class="right"><a href="/2001/06/04/ice_skating/">Read more</a></p>
+	</div>
+	<div class="blocker"></div> <!-- p.right is a float so make sure it stays in the post div -->
 </div>
 
 <div class="post">
 	<div class="post-title"><h3><a href="/2001/06/04/activity_weekend/">2000 Activity Weekend</a></h3></div>
-	<div class="post-date">04 Jun 2001</div>
-	<div class="post-content">On the first weekend of half term 7th A Scouts held an activity weekend. The team consisted of five Scouts and one Cub. It all started on the Friday at 7:15 in the evening when... [..] <a href="/2001/06/04/activity_weekend/">Read more</a></div>
+	<div class="post-date"><p>04 Jun 2001</p></div>
+	<div class="post-content">
+		<p>On the first weekend of half term 7th A Scouts held an activity weekend. The team consisted of five Scouts and one Cub. It all started on the Friday at 7:15 in the evening when... [..]</p>
+		<p class="right"><a href="/2001/06/04/activity_weekend/">Read more</a></p>
+	</div>
+	<div class="blocker"></div> <!-- p.right is a float so make sure it stays in the post div -->
 </div>
 
 <div class="post">
 	<div class="post-title"><h3><a href="/2001/06/02/annual_camp/">Annual Camp 2001</a></h3></div>
-	<div class="post-date">02 Jun 2001</div>
-	<div class="post-content">We went to Sandiway in Cheshire. Here are some photo's from the camp:
+	<div class="post-date"><p>02 Jun 2001</p></div>
+	<div class="post-content">
+		<p>We went to Sandiway in Cheshire. Here are some photo's from the camp:
 
 
 
@@ -234,20 +259,33 @@ No one did a back flip onto a bum this time!
 
 
 See more in the Gallery
- [..] <a href="/2001/06/02/annual_camp/">Read more</a></div>
+ [..]</p>
+		<p class="right"><a href="/2001/06/02/annual_camp/">Read more</a></p>
+	</div>
+	<div class="blocker"></div> <!-- p.right is a float so make sure it stays in the post div -->
 </div>
 
 <div class="post">
 	<div class="post-title"><h3><a href="/2001/05/04/agm_report/">2001 Group Annual General Meeting Report</a></h3></div>
-	<div class="post-date">04 May 2001</div>
-	<div class="post-content">We recently held our annual general meeting, at our HQ, as usual. Before we started the meeting, Stephen Allen, the DC, presented another long service award, to Mrs G Foster, our Group Chairman. This is... [..] <a href="/2001/05/04/agm_report/">Read more</a></div>
+	<div class="post-date"><p>04 May 2001</p></div>
+	<div class="post-content">
+		<p>We recently held our annual general meeting, at our HQ, as usual. Before we started the meeting, Stephen Allen, the DC, presented another long service award, to Mrs G Foster, our Group Chairman. This is... [..]</p>
+		<p class="right"><a href="/2001/05/04/agm_report/">Read more</a></p>
+	</div>
+	<div class="blocker"></div> <!-- p.right is a float so make sure it stays in the post div -->
 </div>
 
 <div class="post">
 	<div class="post-title"><h3><a href="/2000/07/11/agm_report/">2000 Group Annual General Meeting Report</a></h3></div>
-	<div class="post-date">11 Jul 2000</div>
-	<div class="post-content">7thA held their AGM at the group HQ, on Tuesday 11th July. At this meeting we had short reports from both the Cubs &amp; the Scouts, along with Mike's review of the year. Cub Scout... [..] <a href="/2000/07/11/agm_report/">Read more</a></div>
+	<div class="post-date"><p>11 Jul 2000</p></div>
+	<div class="post-content">
+		<p>7thA held their AGM at the group HQ, on Tuesday 11th July. At this meeting we had short reports from both the Cubs &amp; the Scouts, along with Mike's review of the year. Cub Scout... [..]</p>
+		<p class="right"><a href="/2000/07/11/agm_report/">Read more</a></p>
+	</div>
+	<div class="blocker"></div> <!-- p.right is a float so make sure it stays in the post div -->
 </div>
+
+
 
 
 		</div>

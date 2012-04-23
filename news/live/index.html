@@ -74,7 +74,7 @@
 	</script>
 
 	<!--
-	Site rendered at:  Wed Oct 05 13:11:40 +0100 2011 by Jekyll.
+	Site rendered at:  2012-04-23 23:03:05 +0100 by Jekyll.
 
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	- Thanks goes to:                                                           -
@@ -83,8 +83,9 @@
 	-  * The authors of jQuery for making javascript easy.                      -
 	-  * Eric for his awesome css reset hack.                                   -
 	-  * Dean Edwards for his awesome javascript fix IE project                 -
-	-  * Luke Carrier for some js & css fixes.                                  -
+	-  * Luke Carrier for some JS & CSS fixes.                                  -
 	-  * Barry Carlyon for his help with z-index on the css hover stuff.        -
+	-  * Everyone who contributed ideas and help to the project                 -
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 	RIPA NOTICE: No consent is given for the interception of this page transmission
@@ -161,12 +162,6 @@
 						src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/menu/section_scouts.gif" alt="Scouts" />
 					</a>
 				</li>
-				<li>
-					<a href="http://7tharochdale.dev.nodehost.co.uk/explorers/" title="Explorer Scouts">
-						<img onmouseover="switch_menu_image(this);" onmouseout="switch_menu_image(this);"
-						src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/menu/section_explorers.gif" alt="Explorers" />
-					</a>
-				</li>
 			</ul>
 		</li>
 		<li>
@@ -192,19 +187,96 @@
 	<div id="content_holder">
 		<div id="main_content">
 			<h2>Live news</h2>
-			<p><a href="http://7tharochdale.dev.nodehost.co.uk/news/categories/">Categories</a> | <a href="http://7tharochdale.dev.nodehost.co.uk/news/">News</a></p>
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-
-<!-- 7th A Rochdale twitter feed -->
-<div class="tweet_block">
-	<script type="text/javascript">new TWTR.Widget({version: 2,type: "profile",rpp: 10,interval: 6000,width: 250,height: 300,theme: {shell: {background: "#4d2177",color: "#ffffff"},tweets: {background: "#4d2177",color: "#ffffff",links: "#83a40b"}},features: {scrollbar: true,loop: true,live: true,hashtags: true,timestamp: true,avatars: true,behavior: "all"}}).render().setUser("7tha_rochdale").start();</script>
+			<div id="news_menu">
+	<span>
+		<img alt="" src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/news_updates.png" />
+		<a href="http://7tharochdale.dev.nodehost.co.uk/news/">News feed</a>
+	</span>
+	<span>
+		<img alt="" src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/news_live.png" />
+		<a href="http://7tharochdale.dev.nodehost.co.uk/news/live/">Social feeds</a>
+	</span>
+	<span>
+		<img alt="" src="http://7tharochdale.dev.nodehost.co.uk/assests/theme/images/atomfeed_add.png" />
+		<a href="http://7tharochdale.dev.nodehost.co.uk/news/feed.rss">RSS Feed</a>
+	</span>
 </div>
+
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
 
 <!-- UK Scouting twitter feed -->
 <div class="tweet_block">
-	<script type="text/javascript">new TWTR.Widget({version: 2,type: "profile",rpp: 10,interval: 6000,width: 250,height: 300,theme: {shell: {background: "#4d2177",color: "#ffffff"},tweets: {background: "#4d2177",color: "#ffffff",links: "#83a40b"}},features: {scrollbar: true,loop: true,live: true,hashtags: true,timestamp: true,avatars: true,behavior: "all"}}).render().setUser("UKScouting").start();</script>
+	<script type="text/javascript">
+		new TWTR.Widget({
+			version: 2,
+			type: "profile",
+			rpp: 10,
+			interval: 6000,
+			width: 250,
+			height: 300,
+			features: {
+				scrollbar: true,
+				loop: true,
+				live: true,
+				hashtags: true,
+				timestamp: true,
+				avatars: true,
+				behavior: "all"
+			}
+		}).render().setUser("UKScouting").start();
+	</script>
+</div>
+
+<!-- 7th A Rochdale twitter feed -->
+<div class="tweet_block">
+	<script type="text/javascript">
+		new TWTR.Widget({
+			version: 2,
+			type: "profile",
+			rpp: 10,
+			interval: 6000,
+			width: 250,
+			height: 300,
+			features: {
+				scrollbar: true,
+				loop: true,
+				live: true,
+				hashtags: true,
+				timestamp: true,
+				avatars: true,
+				behavior: "all"
+			}
+		}).render().setUser("7tha_rochdale").start();
+	</script>
+</div>
+
+<!-- iscout twitter feed -->
+<div class="tweet_block">
+	<script type="text/javascript">
+		new TWTR.Widget({
+			version: 2,
+			type: "search",
+			search: "#iscout",
+			title: "#iScout",
+			subject: "iScout twitter feed",
+			rpp: 10,
+			interval: 6000,
+			width: 250,
+			height: 300,
+			features: {
+				scrollbar: true,
+				loop: true,
+				live: true,
+				hashtags: true,
+				timestamp: true,
+				avatars: true,
+				behavior: "all"
+			}
+		}).render().start();
+	</script>
 </div>
 <div class="blocker"></div>
+
 
 		</div>
 	</div>
