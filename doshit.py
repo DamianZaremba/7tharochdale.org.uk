@@ -13,7 +13,7 @@ LIVE_SITE_PATH = os.path.realpath(os.path.join(
 	os.path.dirname(__file__),
 	"../", "7tharochdale-live"
 ))
-#DOMAIN = "7tharochdale.org.uk"
+#DOMAIN = "http://7tharochdale.org.uk"
 DOMAIN = "http://7tharochdale.dev.nodehost.co.uk"
 
 def setup(source_dir):
@@ -40,7 +40,7 @@ def compile_site():
 	Calls Jekyll to actually compile (transform) the source
 	'''
 	if os.path.isdir("_site"):
-		os.removedirs("_site")
+		os.system("rm -rf _site")
 
 	fh = open('_config.yml', 'r+')
 	config = ""
@@ -235,7 +235,7 @@ def build_thumbnails():
 			path = os.path.realpath(os.path.join(root, f))
 			basename, extension = os.path.splitext(path)
 
-			if extension.lower() in [".png", ".jpeg", ".jpg"]:
+			if extension.lower() in [".png", ".jpeg", ".jpg", ".gif"]:
 				new_path = path.replace('content/assests/gallery/images/', 'content/assests/gallery/image_thumbnails/', 1)
 				image_dir = os.path.dirname(new_path)
 				if not os.path.isdir(image_dir):
@@ -320,7 +320,7 @@ def run_server():
 	build_thumbnails()
 
 	if os.path.isdir("_site"):
-		os.removedirs("_site")
+		os.system("rm -rf _site")
 	os.system("jekyll --auto --server")
 
 def dev_to_live():

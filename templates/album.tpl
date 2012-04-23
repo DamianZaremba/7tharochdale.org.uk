@@ -1,8 +1,8 @@
 ---
 layout: master
-title: "Gallery ->#if len($albums[$album]['parent_albums']) > 0
+title: "Gallery &raquo; #if len($albums[$album]['parent_albums']) > 0
 	#for $a in $albums[$album]['parent_albums']
- $albums[$a]['name'] ->
+ $albums[$a]['name'] &raquo;
 	#end for
 	#end if
 $albums[$album]['name']"
@@ -32,10 +32,10 @@ $albums[$album]['name']"
     #end for
     </tr>
     </table>
-	<p class="linkback">Back to <a href="{{ site.basedomain }}/gallery/$albums[$album]['parent_path']">Gallery ->
+	<p class="linkback">Back to <a href="{{ site.basedomain }}/gallery/$albums[$album]['parent_path']">Gallery &raquo;
 	#if len($albums[$albums[$album]['parent_path']]['parent_albums']) > 0
 		#for $a in $albums[$albums[$album]['parent_path']]['parent_albums']
-			$albums[$a]['name'] ->
+			$albums[$a]['name'] &raquo;
 		#end for
 	#end if
 	$albums[$albums[$album]['parent_path']]['name']</a></p>
