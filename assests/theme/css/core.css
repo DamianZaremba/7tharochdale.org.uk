@@ -295,11 +295,8 @@ div#leaders_list {
 
 div#leaders_info {
 	float: left;
-	width: 696px;
+	width: 695px;
 	overflow: hidden;
-}
-
-div#leaders_info {
 	border-style: solid;
 	padding: 5px;
 	border-left-width: 1px;
