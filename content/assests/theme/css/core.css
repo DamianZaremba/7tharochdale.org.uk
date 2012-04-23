@@ -173,6 +173,7 @@ p.left {
 #main_content {
 	width: 900px;
 	background: #FFFFFF;
+	padding: 5px;
 }
 
 /* Right content style stuff */
@@ -494,7 +495,7 @@ a:hover {
 }
 
 h3, h4, h5, h6 {
-	margin-bottom: 2px;
+	margin-bottom: 5px;
 	margin-top: 5px;
 }
 
