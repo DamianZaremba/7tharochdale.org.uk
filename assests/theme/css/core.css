@@ -299,11 +299,11 @@ div#leaders_info {
 	overflow: hidden;
 }
 
-div#leaders_info div.leader_info {
-	border-width: 1px;
-	border-color: #000000;
+div#leaders_info {
 	border-style: solid;
 	padding: 5px;
+	border-left-width: 1px;
+	border-left-color: #F0F0F0;
 }
 
 div#leaders_info div img {
