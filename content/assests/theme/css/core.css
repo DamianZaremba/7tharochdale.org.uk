@@ -289,21 +289,18 @@ div#albums a.prev {
 /* Leader pages style stuff */
 div#leaders_list {
 	float: left;
-	width: 150px;
+	width: 200px;
 	overflow: hidden;
 }
 
 div#leaders_info {
 	float: left;
-	width: 746px;
+	width: 689px;
 	overflow: hidden;
-}
-
-div#leaders_info div.leader_info {
-	border-width: 1px;
-	border-color: #000000;
 	border-style: solid;
 	padding: 5px;
+	border-left-width: 1px;
+	border-left-color: #F0F0F0;
 }
 
 div#leaders_info div img {
