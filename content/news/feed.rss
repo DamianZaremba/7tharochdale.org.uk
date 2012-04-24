@@ -1,31 +1,33 @@
 ---
 layout: nil
 ---
-<?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-	<title>{{ site.title }}</title>
-	<link href="{{ site.basedomain }}/news/feed.atom" rel="self" />
-	<link href="{{ site.basedomain }}/" />
-	<updated>{{ site.time || date_to_xmlschema }}</updated>
-	<id>{{ site.basedomain }}/</id>
-	<author>
-		<name>7th A Rochdale Scout Group</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+>
+<channel>
+	<title>7th A Rochdale Scout Group</title>
+	<atom:link href="{{ site.basedomain }}/news/feed.rss" rel="self" type="application/rss+xml" />
+	<link>{{ site.basedomain }}/news/</link>
+	<description>7th A Rochdale Scout Group's News</description>
+	<lastBuildDate>{{ site.time || date_to_xmlschema }}</lastBuildDate>
+	<language>en</language>
+	<xhtml:meta xmlns:xhtml="http://www.w3.org/1999/xhtml" name="robots" content="noindex" />
 	{% for post in site.posts %}
-	<entry>
+	<item>
 		<title>{{ post.title }}</title>
-		<link href="{{ site.basedomain }}/{{ post.url }}" />
-		<updated>{{ post.date | date_to_xmlschema }}</updated>
-		<id>{{ site.basedomain }}/{{ post.id }}</id>
-		<description>{{ post.content | strip_html | truncatewords: 35 | xml_escape }} [..]</description>
-		<content type="html">
-			{{ post.content | xml_escape }}
-		</content>
-	<author>
-		<name>{{ post.author }}</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
-	</entry>
+		<link>{{ site.basedomain }}/{{ post.url }}</link>
+		<pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+		<guid isPermaLink="false">{{ site.basedomain }}/{{ post.id }}</guid>
+		<description><![CDATA[{{ post.content | strip_html | truncatewords: 35 | xml_escape }} [..]]]></description>
+		<content:encoded><![CDATA[{{ post.content | xml_escape }}]]></content:encoded>
+		<dc:creator>{{ post.author }}</dc:creator>
+	</item>
 	{% endfor %}
-</feed>
+</channel>
+</rss>
