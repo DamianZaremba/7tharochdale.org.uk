@@ -1,7 +1,21 @@
 ---
 layout: master
 ---
-<p><a href="{{ site.basedomain }}/news/categories/">Categories</a> | <a href="{{ site.basedomain }}/news/">News</a></p>
+<div id="news_menu">
+	<span>
+		<img alt="" src="{{ site.basedomain }}/assests/theme/images/news_updates.png" />
+		<a href="{{ site.basedomain }}/news/">News feed</a>
+	</span>
+	<span>
+		<img alt="" src="{{ site.basedomain }}/assests/theme/images/news_live.png" />
+		<a href="{{ site.basedomain }}/news/live/">Social feeds</a>
+	</span>
+	<span>
+		<img alt="" src="{{ site.basedomain }}/assests/theme/images/atomfeed_add.png" />
+		<a href="{{ site.basedomain }}/news/feed.rss">RSS Feed</a>
+	</span>
+</div>
+
 <div class="post">
 	<div class="post-date">Posted by {% if page.author_url %}<a href="{{ site.basedomain }}/leaders/{{ page.author_url }}">{% endif %}{{ page.author }}{% if page.author_url %}</a>{% endif %} on {{ page.date | date_to_string }}</div>
 	{{ content }}
