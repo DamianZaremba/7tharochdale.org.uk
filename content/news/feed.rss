@@ -15,14 +15,14 @@ layout: nil
 	<atom:link href="{{ site.basedomain }}/news/feed.rss" rel="self" type="application/rss+xml" />
 	<link>{{ site.basedomain }}/news/</link>
 	<description>7th A Rochdale Scout Group's News</description>
-	<lastBuildDate>{{ site.time || date_to_xmlschema }}</lastBuildDate>
+	<lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %Z" }}</lastBuildDate>
 	<language>en</language>
 	<xhtml:meta xmlns:xhtml="http://www.w3.org/1999/xhtml" name="robots" content="noindex" />
 	{% for post in site.posts %}
 	<item>
 		<title>{{ post.title }}</title>
 		<link>{{ site.basedomain }}/{{ post.url }}</link>
-		<pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+		<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
 		<guid isPermaLink="false">{{ site.basedomain }}/{{ post.id }}</guid>
 		<description><![CDATA[{{ post.content | strip_html | truncatewords: 35 | xml_escape }} [..]]]></description>
 		<content:encoded><![CDATA[{{ post.content | xml_escape }}]]></content:encoded>
