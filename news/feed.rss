@@ -1,44 +1,44 @@
-<?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-	<title></title>
-	<link href="http://7tharochdale.dev.nodehost.co.uk/news/feed.atom" rel="self" />
-	<link href="http://7tharochdale.dev.nodehost.co.uk/" />
-	<updated>2012-04-23T23:23:30+01:00</updated>
-	<id>http://7tharochdale.dev.nodehost.co.uk/</id>
-	<author>
-		<name>7th A Rochdale Scout Group</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+>
+<channel>
+	<title>7th A Rochdale Scout Group</title>
+	<atom:link href="http://7tharochdale.dev.nodehost.co.uk/news/feed.rss" rel="self" type="application/rss+xml" />
+	<link>http://7tharochdale.dev.nodehost.co.uk/news/</link>
+	<description>7th A Rochdale Scout Group's News</description>
+	<lastBuildDate>2012-04-25T00:21:43+01:00</lastBuildDate>
+	<language>en</language>
+	<xhtml:meta xmlns:xhtml="http://www.w3.org/1999/xhtml" name="robots" content="noindex" />
 	
-	<entry>
+	<item>
 		<title>Harry Potter Weekend (Pack Holiday 2002).</title>
-		<link href="http://7tharochdale.dev.nodehost.co.uk//2002/06/28/pack_holiday/" />
-		<updated>2002-06-28T00:00:00+01:00</updated>
-		<id>http://7tharochdale.dev.nodehost.co.uk//2002/06/28/pack_holiday</id>
-		<description>June 28th, saw 7th A Rochdale Cub Scouts going off to Bowley campsite for the weekend. They stayed in the Lodge with pitched some tents outside. The theme for the Weekend was the tales of... [..]</description>
-		<content type="html">
-			&lt;p&gt;June 28th, saw 7th A Rochdale Cub Scouts going off to Bowley campsite for the weekend.
+		<link>http://7tharochdale.dev.nodehost.co.uk//2002/06/28/pack_holiday/</link>
+		<pubDate>2002-06-28T00:00:00+01:00</pubDate>
+		<guid isPermaLink="false">http://7tharochdale.dev.nodehost.co.uk//2002/06/28/pack_holiday</guid>
+		<description><![CDATA[June 28th, saw 7th A Rochdale Cub Scouts going off to Bowley campsite for the weekend. They stayed in the Lodge with pitched some tents outside. The theme for the Weekend was the tales of... [..]]]></description>
+		<content:encoded><![CDATA[&lt;p&gt;June 28th, saw 7th A Rochdale Cub Scouts going off to Bowley campsite for the weekend.
 They stayed in the Lodge with pitched some tents outside. The theme for the Weekend was the tales of &quot;Harry Potter&quot;, The Pack was sorted into sixes, as called out by the famous sorting (baseball) hat. After a stroll around the campsite, and down into the valley, the Cubs went to set up for the first night, with the girls sleeping indoors, and the boys sleeping in the tents, outside.&lt;/p&gt;
 
 &lt;p&gt;The next morning, after what seemed like only two hours sleep (I suppose it might have been three), the girls were rudely awakened by the boys outside their window, shouting out and telling us they were hungry (What do we want, we want GRUB!) Once everyone was up the first activities of the day started. These were climbing, grass sledging and archery. Some of the younger girls can climb like monkeys &amp;amp; shoot arrows like Robin Hood (Akela shoots like a monkey and climbs like Robin Hood). After lunch there were bases working around potions run by Snape (Akela), charms run by me, Hedwig, and transfiguration run by Dumbledore (Mike). Then, after watching some people playing war games. It was time for the campfire sing along, without any fire, inside the sports hall. After a long night singing the girls retired to the tents, where they proceeded to scare themselves with ghost stories, until they eventually returned indoors. The next morning we played games, and carried out some challenges, until after lunch, when everyone packed up and eventually went home.&lt;/p&gt;
 
 &lt;p&gt;Every one on the Harry Potter weekend had a spell binding time, much thanks to Akela for putting on such a great Pack Holiday.&lt;/p&gt;
-
-		</content>
-	<author>
-		<name>Young Leader Allyson Phillips (Hedwig)</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
-	</entry>
+]]></content:encoded>
+		<dc:creator>Young Leader Allyson Phillips (Hedwig)</dc:creator>
+	</item>
 	
-	<entry>
+	<item>
 		<title>2001 Halloween</title>
-		<link href="http://7tharochdale.dev.nodehost.co.uk//2001/10/04/halloween/" />
-		<updated>2001-10-04T00:00:00+01:00</updated>
-		<id>http://7tharochdale.dev.nodehost.co.uk//2001/10/04/halloween</id>
-		<description>All three of our sections celebrated Halloween in 2001. The Beavers held a party, &amp;amp; later on went to see &quot;Harry Potter&quot; at the cinema. The Cubs made skeletons &amp;amp; monsters, whilst the Scouts Bobbed... [..]</description>
-		<content type="html">
-			&lt;p&gt;All three of our sections celebrated Halloween in 2001.
+		<link>http://7tharochdale.dev.nodehost.co.uk//2001/10/04/halloween/</link>
+		<pubDate>2001-10-04T00:00:00+01:00</pubDate>
+		<guid isPermaLink="false">http://7tharochdale.dev.nodehost.co.uk//2001/10/04/halloween</guid>
+		<description><![CDATA[All three of our sections celebrated Halloween in 2001. The Beavers held a party, &amp;amp; later on went to see &quot;Harry Potter&quot; at the cinema. The Cubs made skeletons &amp;amp; monsters, whilst the Scouts Bobbed... [..]]]></description>
+		<content:encoded><![CDATA[&lt;p&gt;All three of our sections celebrated Halloween in 2001.
 The Beavers held a party, &amp;amp; later on went to see &quot;Harry Potter&quot; at the cinema.
 The Cubs made skeletons &amp;amp; monsters, whilst the Scouts Bobbed for Apples, &amp;amp; made Pumpkin Heads!&lt;/p&gt;
 
@@ -49,41 +49,31 @@ The Cubs made skeletons &amp;amp; monsters, whilst the Scouts Bobbed for Apples,
 &lt;img src=&quot;http://7tharochdale.dev.nodehost.co.uk/assests/gallery/images/2001/halloween/image004.jpg&quot; alt=&quot;Apple bobbing&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;See more in the &lt;a href=&quot;http://7tharochdale.dev.nodehost.co.uk/gallery/2001/halloween/&quot;&gt;Gallery&lt;/a&gt;&lt;/p&gt;
-
-		</content>
-	<author>
-		<name>Mike</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
-	</entry>
+]]></content:encoded>
+		<dc:creator>Mike</dc:creator>
+	</item>
 	
-	<entry>
+	<item>
 		<title>Ice Skating</title>
-		<link href="http://7tharochdale.dev.nodehost.co.uk//2001/06/04/ice_skating/" />
-		<updated>2001-06-04T00:00:00+01:00</updated>
-		<id>http://7tharochdale.dev.nodehost.co.uk//2001/06/04/ice_skating</id>
-		<description>The Scouts have recently been ice-skating again, at Blackburn Arena, on or last meeting before the Easter break.
+		<link>http://7tharochdale.dev.nodehost.co.uk//2001/06/04/ice_skating/</link>
+		<pubDate>2001-06-04T00:00:00+01:00</pubDate>
+		<guid isPermaLink="false">http://7tharochdale.dev.nodehost.co.uk//2001/06/04/ice_skating</guid>
+		<description><![CDATA[The Scouts have recently been ice-skating again, at Blackburn Arena, on or last meeting before the Easter break.
 No one did a back flip onto a bum this time!
- [..]</description>
-		<content type="html">
-			&lt;p&gt;The Scouts have recently been ice-skating again, at Blackburn Arena, on or last meeting before the Easter break.
+ [..]]]></description>
+		<content:encoded><![CDATA[&lt;p&gt;The Scouts have recently been ice-skating again, at Blackburn Arena, on or last meeting before the Easter break.
 No one did a back flip onto a bum this time!&lt;/p&gt;
-
-		</content>
-	<author>
-		<name>Mike</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
-	</entry>
+]]></content:encoded>
+		<dc:creator>Mike</dc:creator>
+	</item>
 	
-	<entry>
+	<item>
 		<title>2000 Activity Weekend</title>
-		<link href="http://7tharochdale.dev.nodehost.co.uk//2001/06/04/activity_weekend/" />
-		<updated>2001-06-04T00:00:00+01:00</updated>
-		<id>http://7tharochdale.dev.nodehost.co.uk//2001/06/04/activity_weekend</id>
-		<description>On the first weekend of half term 7th A Scouts held an activity weekend. The team consisted of five Scouts and one Cub. It all started on the Friday at 7:15 in the evening when... [..]</description>
-		<content type="html">
-			&lt;p&gt;On the first weekend of half term 7th A Scouts held an activity weekend.  The team consisted of five Scouts and one Cub.&lt;/p&gt;
+		<link>http://7tharochdale.dev.nodehost.co.uk//2001/06/04/activity_weekend/</link>
+		<pubDate>2001-06-04T00:00:00+01:00</pubDate>
+		<guid isPermaLink="false">http://7tharochdale.dev.nodehost.co.uk//2001/06/04/activity_weekend</guid>
+		<description><![CDATA[On the first weekend of half term 7th A Scouts held an activity weekend. The team consisted of five Scouts and one Cub. It all started on the Friday at 7:15 in the evening when... [..]]]></description>
+		<content:encoded><![CDATA[&lt;p&gt;On the first weekend of half term 7th A Scouts held an activity weekend.  The team consisted of five Scouts and one Cub.&lt;/p&gt;
 
 &lt;p&gt;It all started on the Friday at 7:15 in the evening when the flag went up for the whole weekend and not just for a few hours on a Thursday or Wednesday night. Everyone was welcomed and notices were read out.
 We then had a chance to get changed. We had a game of none stop cricket and burnt off some energy. Then all the Scouts that were not staying were dismissed. Soon it was time for supper and us six all got hot chocolate &amp;amp; a biscuit, yummy!
@@ -106,20 +96,16 @@ Once we got back we swept up, tidied away our stuff and went to flag down. We we
 I can sum the whole weekend up in one word Excellent. And thanks to Mike Phillips, the GSL. We hope to have another weekend like this very soon.&lt;/p&gt;
 
 &lt;p&gt;All the leaders need a big thank you for making this weekend possible and I think every one who went on the activity weekend will back me up on that.&lt;/p&gt;
-
-		</content>
-	<author>
-		<name>Allyson Phillips (PL of the Wolf Patrol)</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
-	</entry>
+]]></content:encoded>
+		<dc:creator>Allyson Phillips (PL of the Wolf Patrol)</dc:creator>
+	</item>
 	
-	<entry>
+	<item>
 		<title>Annual Camp 2001</title>
-		<link href="http://7tharochdale.dev.nodehost.co.uk//2001/06/02/annual_camp/" />
-		<updated>2001-06-02T00:00:00+01:00</updated>
-		<id>http://7tharochdale.dev.nodehost.co.uk//2001/06/02/annual_camp</id>
-		<description>We went to Sandiway in Cheshire. Here are some photo's from the camp:
+		<link>http://7tharochdale.dev.nodehost.co.uk//2001/06/02/annual_camp/</link>
+		<pubDate>2001-06-02T00:00:00+01:00</pubDate>
+		<guid isPermaLink="false">http://7tharochdale.dev.nodehost.co.uk//2001/06/02/annual_camp</guid>
+		<description><![CDATA[We went to Sandiway in Cheshire. Here are some photo's from the camp:
 
 
 
@@ -128,9 +114,8 @@ I can sum the whole weekend up in one word Excellent. And thanks to Mike Phillip
 
 
 See more in the Gallery
- [..]</description>
-		<content type="html">
-			&lt;p&gt;We went to Sandiway in Cheshire. Here are some photo's from the camp:&lt;/p&gt;
+ [..]]]></description>
+		<content:encoded><![CDATA[&lt;p&gt;We went to Sandiway in Cheshire. Here are some photo's from the camp:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://7tharochdale.dev.nodehost.co.uk/assests/gallery/images/2001/annual_camp/image001.jpg&quot; alt=&quot;Backwards cooking&quot; /&gt;
 &lt;img src=&quot;http://7tharochdale.dev.nodehost.co.uk/assests/gallery/images/2001/annual_camp/image002.jpg&quot; alt=&quot;Raft building&quot; /&gt;&lt;/p&gt;
@@ -139,22 +124,17 @@ See more in the Gallery
 &lt;img src=&quot;http://7tharochdale.dev.nodehost.co.uk/assests/gallery/images/2001/annual_camp/image004.jpg&quot; alt=&quot;Camp photo&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;See more in the &lt;a href=&quot;http://7tharochdale.dev.nodehost.co.uk/gallery/2001/annual_camp/&quot;&gt;Gallery&lt;/a&gt;&lt;/p&gt;
-
-		</content>
-	<author>
-		<name>Mike</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
-	</entry>
+]]></content:encoded>
+		<dc:creator>Mike</dc:creator>
+	</item>
 	
-	<entry>
+	<item>
 		<title>2001 Group Annual General Meeting Report</title>
-		<link href="http://7tharochdale.dev.nodehost.co.uk//2001/05/04/agm_report/" />
-		<updated>2001-05-04T00:00:00+01:00</updated>
-		<id>http://7tharochdale.dev.nodehost.co.uk//2001/05/04/agm_report</id>
-		<description>We recently held our annual general meeting, at our HQ, as usual. Before we started the meeting, Stephen Allen, the DC, presented another long service award, to Mrs G Foster, our Group Chairman. This is... [..]</description>
-		<content type="html">
-			&lt;p&gt;We recently held our annual general meeting, at our HQ, as usual.&lt;/p&gt;
+		<link>http://7tharochdale.dev.nodehost.co.uk//2001/05/04/agm_report/</link>
+		<pubDate>2001-05-04T00:00:00+01:00</pubDate>
+		<guid isPermaLink="false">http://7tharochdale.dev.nodehost.co.uk//2001/05/04/agm_report</guid>
+		<description><![CDATA[We recently held our annual general meeting, at our HQ, as usual. Before we started the meeting, Stephen Allen, the DC, presented another long service award, to Mrs G Foster, our Group Chairman. This is... [..]]]></description>
+		<content:encoded><![CDATA[&lt;p&gt;We recently held our annual general meeting, at our HQ, as usual.&lt;/p&gt;
 
 &lt;p&gt;Before we started the meeting, Stephen Allen, the DC, presented another long service award, to Mrs G Foster, our Group Chairman. This is yet another example of how our helpers put in many years of service to Scouting. Well-done Mrs Foster!&lt;/p&gt;
 
@@ -165,22 +145,17 @@ See more in the Gallery
 
 &lt;p&gt;Mike expressed his thanks to all the retiring committee, before they were re-appointed for another year!
 Sadly, Mr Mills was unable to carry on as treasurer this year. Thanks anyway, you have been a big support to us all.&lt;/p&gt;
-
-		</content>
-	<author>
-		<name>Mike</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
-	</entry>
+]]></content:encoded>
+		<dc:creator>Mike</dc:creator>
+	</item>
 	
-	<entry>
+	<item>
 		<title>2000 Group Annual General Meeting Report</title>
-		<link href="http://7tharochdale.dev.nodehost.co.uk//2000/07/11/agm_report/" />
-		<updated>2000-07-11T00:00:00+01:00</updated>
-		<id>http://7tharochdale.dev.nodehost.co.uk//2000/07/11/agm_report</id>
-		<description>7thA held their AGM at the group HQ, on Tuesday 11th July. At this meeting we had short reports from both the Cubs &amp;amp; the Scouts, along with Mike's review of the year. Cub Scout... [..]</description>
-		<content type="html">
-			&lt;p&gt;7thA held their AGM at the group HQ, on Tuesday 11th July.
+		<link>http://7tharochdale.dev.nodehost.co.uk//2000/07/11/agm_report/</link>
+		<pubDate>2000-07-11T00:00:00+01:00</pubDate>
+		<guid isPermaLink="false">http://7tharochdale.dev.nodehost.co.uk//2000/07/11/agm_report</guid>
+		<description><![CDATA[7thA held their AGM at the group HQ, on Tuesday 11th July. At this meeting we had short reports from both the Cubs &amp;amp; the Scouts, along with Mike's review of the year. Cub Scout... [..]]]></description>
+		<content:encoded><![CDATA[&lt;p&gt;7thA held their AGM at the group HQ, on Tuesday 11th July.
 At this meeting we had short reports from both the Cubs &amp;amp; the Scouts, along with Mike's review of the year.&lt;/p&gt;
 
 &lt;p&gt;Cub Scout highlights include the following;
@@ -212,12 +187,9 @@ The new members of the committee were then elected as follows;
 
 &lt;p&gt;Stephen Allan, from Rochdale District, called to present Long Service awards to Mrs Hindle &amp;amp; Mrs Scott.
 These are for the recognition of 15 or more year's service to the movement, a very notable achievement I am sure.&lt;/p&gt;
-
-		</content>
-	<author>
-		<name>Mike</name>
-		<email>group@7tharochdale.org.uk</email>
-	</author>
-	</entry>
+]]></content:encoded>
+		<dc:creator>Mike</dc:creator>
+	</item>
 	
-</feed>
+</channel>
+</rss>
