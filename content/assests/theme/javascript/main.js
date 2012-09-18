@@ -1,34 +1,3 @@
-function preLoadImages(imageArray){
-	$.each(imageArray, function (i, val) {
-		/*
-			Lets just make a new dom img object and set it's src to this value,
-			the browser /should/ then cache the image making the hover effects work nicely with no loading delay!
-		*/
-		cacheImage = document.createElement('img').src = val;
-	});
-}
-
-function switch_menu_image(item) {
-	/* Hack to get the current image stuff. */
-	image_parts = item.getAttribute('src').split('/');
-	image_path = image_parts.splice(0, image_parts.length-1).join("/");
-	image_name = image_parts[image_parts.length-1];
-
-	if(image_name.split('depressed_').length == 2){
-		/*
-			We are the depressed image, lets load the happy image
-		*/
-		replace_image = image_path+'/'+image_name.split('depressed_')[1];
-	}else{
-		/*
-			We are the happy image (ha!), lets load the depressed image
-		*/
-		replace_image = image_path+'/depressed_'+image_name;
-	}
-	/* Actually do the update to the image src */
-	item.src = replace_image;
-}
-
 function switcher(show_id) {
 	/* Get the object we want to show */
 	var show = $("#" + show_id);
