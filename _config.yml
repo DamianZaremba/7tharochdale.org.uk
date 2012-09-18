@@ -4,5 +4,5 @@ pygments: true
 lsi: true
 exclude: 7thARochdale.komodoproject, README.md, doshit.py, templates
 source: content
-basedomain: http://127.0.0.1:4039
+basedomain: http://10.44.200.5:4039
 server_port: 4039

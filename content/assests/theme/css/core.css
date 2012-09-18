@@ -17,11 +17,20 @@ p.left {
 	float: left;
 }
 
-/* Menu style stuff */
-#menu {
+/* Menu style stuff
+ *
+ * Thanks to Barry Carlyon (http://barrycarlyon.co.uk/) for helping out on this funky z-index css menu hover stuff
+ * Original code from the lsrfm branch of Carlyon CMS and hacked a bit to fit in here.
+ */
+#menu ul {
 	width: 900px;
-	height: 35px;
+	height: 30px;
 	margin: 0 auto;
+    background-color: #4D2177;
+}
+
+#menu ul li:hover a, #menu ul li:hover {
+	color: #006990;
 }
 
 #menu ul {
@@ -29,41 +38,65 @@ p.left {
 	z-index: 3;
 }
 
+#menu ul li a {
+    color: #84A40B;
+}
+
 #menu ul li {
 	display: inline;
 	float: left;
+    padding-top: 5px;
+    width: 100px;
+    text-align: center;
+    color: #84A40B;
+    border-right: solid 1px #000000;
+    height: 25px;
+    overflow: hidden;
 }
 
-#menu ul li img {
-	border: 0px;
+#menu ul li a, #menu ul li ul li a {
+    text-decoration: none;
 }
 
-#menu li ul li {
+#menu ul li ul {
+    width: 100px;
+    margin-top: 11px;
+	z-index: 3;
+    display: block;
+}
+
+#menu ul li ul li {
 	position: relative;
 	clear: left;
 	z-index: 3;
+    background-color: #4D2177;
 }
 
-#menu li ul {
-	position: absolute;
-	display: none;
+#menu ul li ul {
+    position: absolute;
+    display: none;
 }
 
 /* Menu hover stuff */
-#menu li:hover ul {
+#menu ul li:hover ul {
 	display: block;
 }
-/*
- * Thanks to Barry Carlyon (http://barrycarlyon.co.uk/) for helping out on this funky z-index css menu hover stuff
- * Original code from the lsrfm branch of Carlyon CMS and hacked a bit to fit in here.
- */
-#menu li:hover ul li {
-	margin-top: -3px;
-	border-style: solid;
-	border-color: #000000;
-	border-width: 1px;
-	height: 35px;
-	width: 130px;
+
+#menu ul li:hover ul li {
+    border-top: solid 1px #000000;
+    margin-top: -3px;
+    padding-top: 6px;
+	height: 30px;
+    width: 100px;
+    text-align: center;
+}
+
+#menu ul li:hover ul li a {
+    color: #84A40B;
+}
+
+#menu ul li:hover ul li:hover a {
+	color: #006990;
 }
 
 /* Header style stuff */
@@ -89,7 +122,7 @@ p.left {
 	height: 110px;
 	margin: 0 auto;
 	margin-top: 5px;
-	background-color: #522e91;
+	background-color: #4D2177;
 }
 
 #footer_left {
@@ -142,15 +175,11 @@ p.left {
 }
 
 #footer_webring .wring_flinks a:link {
-	color: #FFFFFF;
-}
-
-#footer_webring .wring_flinks a:visited {
-	color: #FFFFFF;
+	color: #84A30B;
 }
 
 #footer_webring .wring_flinks a:hover {
-	color: #cc9900;
+	color: #ED7703;
 }
 
 #footer_webring .wring_flinks a:active {
@@ -486,7 +515,7 @@ table#contact_details tr td, table#contact_details tr th {
 
 /* General style stuff */
 a {
-	color: #522e91;
+	color: #4D2177;
 }
 
 a:hover {
